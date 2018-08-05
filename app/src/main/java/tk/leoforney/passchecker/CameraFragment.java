@@ -13,7 +13,6 @@ import com.wonderkiln.camerakit.CameraView;
 
 public class CameraFragment extends Fragment {
 
-    private OnFragmentInteractionListener mListener;
     CameraView cameraView;
     private static final String TAG = "CameraFragment";
 
@@ -21,13 +20,7 @@ public class CameraFragment extends Fragment {
 
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment CameraFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static CameraFragment newInstance() {
         CameraFragment fragment = new CameraFragment();
         Bundle args = new Bundle();
@@ -78,31 +71,13 @@ public class CameraFragment extends Fragment {
         cameraView.addCameraKitListener(uploader);
     }
 
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 }

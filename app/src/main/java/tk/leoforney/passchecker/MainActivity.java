@@ -18,12 +18,15 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, CameraFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager fm;
+    Fragment listFrag;
+    Fragment camFrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        listFrag = PassListFragment.newInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -47,6 +50,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        navigationView.getMenu().getItem(0).setChecked(true);
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.contentFragment, listFrag).commit();
     }
 
     @Override
@@ -89,9 +96,14 @@ public class MainActivity extends AppCompatActivity
 
         FragmentTransaction transaction = fm.beginTransaction();
         if (id == R.id.nav_list) {
-
+            if (listFrag == null) {
+                listFrag = PassListFragment.newInstance();
+            }
+            transaction.replace(R.id.contentFragment, listFrag);
         } else if (id == R.id.nav_camera) {
-            Fragment camFrag = CameraFragment.newInstance();
+            if (camFrag == null) {
+                camFrag = CameraFragment.newInstance();
+            }
             transaction.replace(R.id.contentFragment, camFrag);
         } else if (id == R.id.nav_manage) {
 
@@ -104,8 +116,4 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-        // Do nothing who gives a shit
-    }
 }

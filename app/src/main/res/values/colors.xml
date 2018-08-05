@@ -3,4 +3,7 @@
     <color name="colorPrimary">#FF9800</color>
     <color name="colorPrimaryDark">#F57C00</color>
     <color name="colorAccent">#42A5F5</color>
+    <color name="refresh_progress_1">@color/colorPrimaryDark</color>
+    <color name="refresh_progress_2">@color/colorAccent</color>
+    <color name="refresh_progress_3">@color/colorPrimary</color>
 </resources>

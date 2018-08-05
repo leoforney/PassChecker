@@ -1,16 +1,22 @@
 package tk.leoforney.passchecker;
 
+import android.os.Build;
+import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.google.gson.Gson;
 
 /**
  * Created by Leo on 7/27/2018.
  */
-public class Car implements Parcelable {
+public class Car {
     public String plateNumber, make, model, color;
     public int year, id;
 
-    public Car() {
+    private Gson gson;
 
+    public Car() {
+        gson = new Gson();
     }
 
     public Car(String plateNumber, String color, String make, String model, int year, int id) {
@@ -20,6 +26,7 @@ public class Car implements Parcelable {
         this.model = model;
         this.year = year;
         this.id = id;
+        gson = new Gson();
     }
 
     @Override

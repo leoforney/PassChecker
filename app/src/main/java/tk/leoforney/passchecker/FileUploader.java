@@ -1,8 +1,10 @@
 package tk.leoforney.passchecker;
 
-import android.content.Context;
+import android.app.Activity;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.wonderkiln.camerakit.CameraKitError;
 import com.wonderkiln.camerakit.CameraKitEvent;
 import com.wonderkiln.camerakit.CameraKitEventListener;
@@ -10,6 +12,7 @@ import com.wonderkiln.camerakit.CameraKitImage;
 import com.wonderkiln.camerakit.CameraKitVideo;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -22,13 +25,17 @@ import okhttp3.Response;
 
 public class FileUploader implements CameraKitEventListener {
 
-    Context context;
+    Activity activity;
     OkHttpClient client;
+    Gson gson;
     private final static String TAG = "FileUploader";
 
-    public FileUploader(Context context) {
-        this.context = context;
-        client = new OkHttpClient();
+    public FileUploader(Activity activity) {
+        this.activity = activity;
+        client = new OkHttpClient.Builder()
+                .writeTimeout(3L, TimeUnit.SECONDS)
+                .build();
+        gson = new Gson();
     }
 
     @Override
@@ -44,24 +51,38 @@ public class FileUploader implements CameraKitEventListener {
     @Override
     public void onImage(CameraKitImage cameraKitImage) {
         byte[] data = cameraKitImage.getJpeg();
+        Log.d(TAG, "Data received: " + data.length);
+
         MultipartBody.Builder buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
         MediaType type = MediaType.parse("image/jpeg");
         RequestBody imageBody = RequestBody.create(type, data);
         buildernew.addFormDataPart("image", "tempImage", imageBody);
         MultipartBody requestBody = buildernew.build();
+
         Request request = new Request.Builder()
-                .url("http://192.168.43.74:8080/getStudentName")
+                .url("http://" + activity.getResources().getString(R.string.server_url) + "/getStudentName")
+                .addHeader("Token", activity.getResources().getString(R.string.token))
                 .post(requestBody)
                 .build();
+
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-
+                e.printStackTrace();
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                Log.d(TAG, response.body().string());
+                final String responseString = response.body().string();
+                Log.d(TAG, responseString);
+                //Student student = gson.fromJson(responseString, Student.class);
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(activity, "Student name: " + responseString, Toast.LENGTH_LONG).show();
+
+                    }
+                });
             }
         });
     }

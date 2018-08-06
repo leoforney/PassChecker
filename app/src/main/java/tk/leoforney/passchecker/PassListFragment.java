@@ -75,7 +75,6 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
     @Override
     public void onRefresh() {
         refreshData();
-
     }
 
     private void refreshData() {
@@ -85,6 +84,7 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
                 .addHeader("Token", getResources().getString(R.string.token))
                 .build();
 
+        /*
         // Set the adapter
         if (recyclerView != null) {
             final Context context = recyclerView.getContext();
@@ -102,16 +102,17 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
                     Type listType = new TypeToken<ArrayList<Student>>() {
                     }.getType();
                     List<Student> studentList = gson.fromJson(body, listType);
-                    adapter = new StudentListAdapter(studentList);
+                    //adapter = new StudentListAdapter(studentList);
                     Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            recyclerView.setAdapter(adapter);
+                            //recyclerView.setAdapter(adapter);
                             swipeRefreshLayout.setRefreshing(false);
                         }
                     });
                 }
             });
-        }
+        } */
+        swipeRefreshLayout.setRefreshing(false);
     }
 }

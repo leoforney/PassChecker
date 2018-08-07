@@ -61,7 +61,7 @@ public class FileUploader implements CameraKitEventListener {
 
         Request request = new Request.Builder()
                 .url("http://" + activity.getResources().getString(R.string.server_url) + "/getStudentName")
-                .addHeader("Token", activity.getResources().getString(R.string.token))
+                .addHeader("Token", CredentialsManager.getInstance(activity).getToken())
                 .post(requestBody)
                 .build();
 
@@ -75,7 +75,7 @@ public class FileUploader implements CameraKitEventListener {
             public void onResponse(Call call, Response response) throws IOException {
                 final String responseString = response.body().string();
                 Log.d(TAG, responseString);
-                //Student student = gson.fromJson(responseString, Student.class);
+                Student student = gson.fromJson(responseString, Student.class);
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

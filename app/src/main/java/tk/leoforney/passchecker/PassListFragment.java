@@ -81,14 +81,15 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
         Request carRequest = new Request.Builder()
                 .get()
                 .url("http://" + getResources().getString(R.string.server_url) + "/pass/student/all/json")
-                .addHeader("Token", getResources().getString(R.string.token))
+                .addHeader("Token", CredentialsManager.getInstance(getContext()).getToken())
                 .build();
 
-        /*
+
         // Set the adapter
         if (recyclerView != null) {
             final Context context = recyclerView.getContext();
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            /*
             client.newCall(carRequest).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
@@ -111,8 +112,8 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
                         }
                     });
                 }
-            });
-        } */
+            }); */
+        }
         swipeRefreshLayout.setRefreshing(false);
     }
 }

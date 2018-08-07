@@ -1,6 +1,6 @@
 package tk.leoforney.passchecker;
 
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -23,12 +23,19 @@ public class MainActivity extends AppCompatActivity
     FragmentManager fm;
     Fragment listFrag;
     Fragment camFrag;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         listFrag = PassListFragment.newInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (!CredentialsManager.getInstance(this).alreadyExists()) {
+            startActivity(new Intent(this, LoginActivity.class));
+            //finish();
+        }
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         fm = getSupportFragmentManager();
@@ -48,12 +55,14 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         navigationView.getMenu().getItem(0).setChecked(true);
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.contentFragment, listFrag).commit();
+
+        CredentialsManager.getInstance(this).setDisplayData(this);
     }
 
     @Override

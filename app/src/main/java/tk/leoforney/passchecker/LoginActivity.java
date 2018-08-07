@@ -29,16 +29,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import org.apache.commons.codec.binary.Base64;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -52,10 +53,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
 
     private static final int REQUEST_READ_CONTACTS = 0;
-
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
 
     private UserLoginTask mAuthTask = null;
 
@@ -301,6 +298,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         private final Activity activity;
         private final String mPassword;
         private OkHttpClient client;
+        private Gson gson;
         private org.apache.commons.codec.binary.Base64 base64;
 
         UserLoginTask(Activity activity, String email, String password) {
@@ -312,6 +310,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mPassword = password;
 
             base64 = new Base64();
+            gson = new Gson();
 
             this.activity = activity;
         }
@@ -322,34 +321,37 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             String concatString = mEmail + ":" + mPassword;
             String token = "";
+
             try {
-                token = base64.encodeAsString(concatString.getBytes("UTF-8"));
+                token = new String(base64.encode(concatString.getBytes("UTF-8")));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
 
+            Log.d(LoginActivity.class.getName(), token);
+
             Request request = new Request.Builder()
-                    .url("http://" + activity.getResources().getString(R.string.server_url) + "/validateUser/json")
+                    .url("http://" + activity.getResources().getString(R.string.server_url) + "/user/validateuser/json")
                     .get()
                     .header("Token", token)
                     .build();
 
             try {
                 Response response = client.newCall(request).execute();
-                Log.d(LoginActivity.class.getName(), response.body().string());
+                String responseString = response.body().string();
+                Log.d(LoginActivity.class.getName(), responseString);
+                User user = gson.fromJson(responseString, User.class);
+                if (user != null) {
+                    if (user.isValid() && decode(user.token).equals(token)) {
+                        CredentialsManager.getInstance(activity).setData(user.name, user.token);
+                        return true;
+                    }
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
-            }
-
-            return true;
+            return false;
         }
 
         @Override
@@ -369,6 +371,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         protected void onCancelled() {
             mAuthTask = null;
             showProgress(false);
+        }
+
+
+        private String decode(String url) {
+            try {
+                String prevURL="";
+                String decodeURL=url;
+                while(!prevURL.equals(decodeURL)) {
+                    prevURL = decodeURL;
+                    decodeURL = URLDecoder.decode( decodeURL, "UTF-8" );
+                }
+                return decodeURL;
+            } catch (UnsupportedEncodingException e) {
+                return "Issue while decoding" +e.getMessage();
+            }
         }
     }
 }

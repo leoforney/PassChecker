@@ -43,13 +43,11 @@ class CredentialsManager {
     }
 
     boolean alreadyExists() {
-        if (!(getToken() == null) && !(getName() == null)) {
-            return true;
-        }
-        return false;
+        return !(getToken().equals("")) && !(getName().equals(""));
     }
 
     void setDisplayData(MainActivity mainActivity) {
+        Log.d("CredentialsManager", "Display data requested");
 
         View headerLayout = mainActivity.navigationView.getHeaderView(0); // 0-index header
 
@@ -77,5 +75,4 @@ class CredentialsManager {
         editor.putString("email", split[0]);
         editor.apply();
     }
-
 }

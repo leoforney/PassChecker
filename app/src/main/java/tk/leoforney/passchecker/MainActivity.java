@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
 
         if (!CredentialsManager.getInstance(this).alreadyExists()) {
             startActivity(new Intent(this, LoginActivity.class));
-            //finish();
+            finish();
         }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -58,6 +58,11 @@ public class MainActivity extends AppCompatActivity
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        CredentialsManager.getInstance(this).setDisplayData(this);
+
+        if (listFrag == null) {
+            listFrag = PassListFragment.newInstance();
+        }
         navigationView.getMenu().getItem(0).setChecked(true);
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.contentFragment, listFrag).commit();

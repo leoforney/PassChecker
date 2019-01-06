@@ -6,7 +6,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="server_url">192.168.86.60:4567</string>
+    <string name="server_url">192.168.86.211:4567</string>
     <string name="token">Zm9ybmU2OTVAd3Rocy5uZXQ6ZGFyeWxlbzE=</string>
 
     <string name="title_activity_login">Sign in</string>

@@ -51,6 +51,8 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
         super.onCreate(savedInstanceState);
         client = new OkHttpClient.Builder().connectTimeout(3L, TimeUnit.SECONDS).build();
         gson = new Gson();
+
+        Log.d(PassListFragment.class.getName(), "PassList requested");
     }
 
     @Override
@@ -89,7 +91,6 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
         if (recyclerView != null) {
             final Context context = recyclerView.getContext();
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            /*
             client.newCall(carRequest).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
@@ -103,16 +104,16 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
                     Type listType = new TypeToken<ArrayList<Student>>() {
                     }.getType();
                     List<Student> studentList = gson.fromJson(body, listType);
-                    //adapter = new StudentListAdapter(studentList);
+                    adapter = new StudentListAdapter(studentList);
                     Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            //recyclerView.setAdapter(adapter);
+                            recyclerView.setAdapter(adapter);
                             swipeRefreshLayout.setRefreshing(false);
                         }
                     });
                 }
-            }); */
+            });
         }
         swipeRefreshLayout.setRefreshing(false);
     }

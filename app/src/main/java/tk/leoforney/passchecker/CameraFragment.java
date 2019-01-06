@@ -40,6 +40,7 @@ public class CameraFragment extends Fragment {
     public void onResume() {
         super.onResume();
         cameraView.start();
+
         Log.d(TAG, "Started");
     }
 

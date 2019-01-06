@@ -11,9 +11,6 @@
         android:paddingTop="55dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        camerakit:ckJpegQuality="100"
-        camerakit:ckFlash="auto"
-        camerakit:ckMethod="still"
         android:adjustViewBounds="true" />
 
     <Button

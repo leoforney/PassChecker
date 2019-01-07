@@ -5,11 +5,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.wonderkiln.camerakit.CameraKitError;
-import com.wonderkiln.camerakit.CameraKitEvent;
-import com.wonderkiln.camerakit.CameraKitEventListener;
-import com.wonderkiln.camerakit.CameraKitImage;
-import com.wonderkiln.camerakit.CameraKitVideo;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +18,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class FileUploader implements CameraKitEventListener {
+public class FileUploader {
 
     Activity activity;
     OkHttpClient client;
@@ -38,19 +33,9 @@ public class FileUploader implements CameraKitEventListener {
         gson = new Gson();
     }
 
-    @Override
-    public void onEvent(CameraKitEvent cameraKitEvent) {
-
-    }
-
-    @Override
-    public void onError(CameraKitError cameraKitError) {
-
-    }
-
-    @Override
-    public void onImage(CameraKitImage cameraKitImage) {
-        byte[] data = cameraKitImage.getJpeg();
+    //@Override
+    public void onImage(/*CameraKitImage cameraKitImage*/) {
+        byte[] data = new byte[5];//cameraKitImage.getJpeg();
         Log.d(TAG, "Data received: " + data.length);
 
         MultipartBody.Builder buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
@@ -87,8 +72,4 @@ public class FileUploader implements CameraKitEventListener {
         });
     }
 
-    @Override
-    public void onVideo(CameraKitVideo cameraKitVideo) {
-
-    }
 }

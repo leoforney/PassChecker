@@ -1,19 +1,14 @@
 package com.github.friesw.mjpegstreamer;
 
-import android.media.ImageWriter;
-
+/*
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.Locale;
-
+import java.awt.image.BufferedImage;*/
+/*
 import javax.imageio.IIOImage;
 import javax.imageio.ImageWriteParam;
 import javax.imageio.plugins.jpeg.JPEGImageWriteParam;
-import javax.imageio.stream.ImageOutputStream;
+import javax.imageio.stream.ImageOutputStream;*/
 
 public class Source implements JpegImageSource
 {
@@ -41,6 +36,12 @@ public class Source implements JpegImageSource
       this.height = height;
       start = System.currentTimeMillis();
    }
+
+   @Override
+   public byte[] getImage() {
+      return new byte[0];
+   }
+   /*
    
    @Override
    public byte[] getImage() {
@@ -94,5 +95,6 @@ public class Source implements JpegImageSource
           return null;
        }
      }
+     */
 
 }

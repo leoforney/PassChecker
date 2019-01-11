@@ -17,8 +17,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.serenegiant.usbcameratest.CameraActivity;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -117,8 +115,10 @@ public class MainActivity extends AppCompatActivity
             }
             transaction.replace(R.id.contentFragment, listFrag);
         } else if (id == R.id.nav_camera) {
-            Intent cameraActivity = new Intent(getApplicationContext(), CameraActivity.class);
-            startActivity(cameraActivity);
+            if (camFrag == null) {
+                camFrag = CameraFragment.newInstance();
+            }
+            transaction.replace(R.id.contentFragment, camFrag);
         } else if (id == R.id.nav_manage) {
 
         }

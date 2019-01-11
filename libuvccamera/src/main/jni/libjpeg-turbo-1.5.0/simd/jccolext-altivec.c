@@ -21,6 +21,9 @@
  * 3. This notice may not be removed or altered from any source distribution.
  */
 
+#include "../jmorecfg.h"
+#include "../jpeglib.h"
+
 /* This file is included by jccolor-altivec.c */
 
 

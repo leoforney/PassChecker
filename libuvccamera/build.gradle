@@ -50,6 +50,10 @@ android {
 			jni.srcDirs = []
 		}
 	}
+	packagingOptions{
+		doNotStrip '*/mips/*.so'
+		doNotStrip '*/mips64/*.so'
+	}
     externalNativeBuild {
         ndkBuild {
             path file('src/main/jni/Android.mk')

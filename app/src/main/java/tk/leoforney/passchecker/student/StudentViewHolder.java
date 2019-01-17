@@ -1,6 +1,5 @@
 package tk.leoforney.passchecker.student;
 
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.RotateAnimation;
@@ -9,6 +8,7 @@ import android.widget.TextView;
 
 import com.bignerdranch.expandablerecyclerview.ParentViewHolder;
 
+import androidx.annotation.NonNull;
 import tk.leoforney.passchecker.R;
 import tk.leoforney.passchecker.Student;
 

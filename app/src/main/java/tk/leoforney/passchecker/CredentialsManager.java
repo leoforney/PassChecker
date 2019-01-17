@@ -2,7 +2,6 @@ package tk.leoforney.passchecker;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -10,6 +9,8 @@ import android.widget.TextView;
 import org.apache.commons.codec.binary.Base64;
 
 import java.io.UnsupportedEncodingException;
+
+import androidx.annotation.NonNull;
 
 class CredentialsManager {
 

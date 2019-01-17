@@ -1,11 +1,11 @@
 package tk.leoforney.passchecker.student;
 
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.TextView;
 
 import com.bignerdranch.expandablerecyclerview.ChildViewHolder;
 
+import androidx.annotation.NonNull;
 import tk.leoforney.passchecker.Car;
 
 public class CarViewHolder extends ChildViewHolder {

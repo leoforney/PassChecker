@@ -1,7 +1,5 @@
 package tk.leoforney.passchecker.student;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.UiThread;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +9,8 @@ import com.bignerdranch.expandablerecyclerview.ExpandableRecyclerAdapter;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.UiThread;
 import tk.leoforney.passchecker.Car;
 import tk.leoforney.passchecker.R;
 import tk.leoforney.passchecker.Student;

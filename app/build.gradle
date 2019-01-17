@@ -51,5 +51,6 @@ dependencies {
     implementation 'com.github.michael-rapp:android-preference-activity:7.0.1'
     implementation 'commons-codec:commons-codec:1.11'
     implementation 'com.sun.net.httpserver:http:20070405'
+    implementation 'com.karumi:dexter:5.0.0'
 
 }

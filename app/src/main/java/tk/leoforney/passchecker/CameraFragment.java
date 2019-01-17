@@ -1,20 +1,30 @@
 package tk.leoforney.passchecker;
 
 import android.content.Context;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraDevice;
+import android.hardware.camera2.CameraMetadata;
+import android.hardware.camera2.CaptureRequest;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.camerakit.CameraKitView;
 
 import androidx.fragment.app.Fragment;
+import me.aflak.ezcam.EZCam;
+import me.aflak.ezcam.EZCamCallback;
 
-public class CameraFragment extends Fragment implements CameraKitView.CameraListener, CameraKitView.ImageCallback, CameraKitView.FrameCallback {
+public class CameraFragment extends Fragment implements EZCamCallback {
 
-    private CameraKitView cameraKitView;
     private static final String TAG = "CameraFragment";
+    private EZCam cam;
+    private TextureView textureView;
+    FileUploader uploader;
 
     public CameraFragment() {
 
@@ -28,8 +38,6 @@ public class CameraFragment extends Fragment implements CameraKitView.CameraList
         return fragment;
     }
 
-    FileUploader uploader;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         uploader = new FileUploader(getActivity());
@@ -39,14 +47,11 @@ public class CameraFragment extends Fragment implements CameraKitView.CameraList
     @Override
     public void onResume() {
         super.onResume();
-        cameraKitView.onResume();
-        cameraKitView.captureFrame(this);
         Log.d(TAG, "Started");
     }
 
     @Override
     public void onPause() {
-        cameraKitView.onPause();
         Log.d(TAG, "Paused");
         super.onPause();
     }
@@ -60,9 +65,13 @@ public class CameraFragment extends Fragment implements CameraKitView.CameraList
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        cameraKitView = view.findViewById(R.id.camera);
-        cameraKitView.setCameraListener(this);
-        cameraKitView.onStart();
+        Log.d(TAG, "Camera opened!");
+        cam = new EZCam(getContext());
+        textureView = view.findViewById(R.id.textureView);
+        String id = cam.getCamerasList().get(CameraCharacteristics.LENS_FACING_BACK);
+        cam.selectCamera(id);
+        cam.setCameraCallback(this);
+        cam.open(CameraDevice.TEMPLATE_PREVIEW, textureView);
     }
 
     @Override
@@ -72,42 +81,33 @@ public class CameraFragment extends Fragment implements CameraKitView.CameraList
 
     @Override
     public void onDetach() {
-        if (cameraKitView != null) {
-            cameraKitView.onStop();
-        }
+
         super.onDetach();
     }
 
     @Override
-    public void onOpened() {
+    public void onCameraReady() {
+        // triggered after cam.open(...)
+        // you can set capture settings for example:
+        cam.setCaptureSetting(CaptureRequest.COLOR_CORRECTION_ABERRATION_MODE, CameraMetadata.COLOR_CORRECTION_ABERRATION_MODE_HIGH_QUALITY);
+        cam.setCaptureSetting(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_OFF);
+
+        // then start the preview
+        cam.startPreview();
+    }
+
+    @Override
+    public void onPicture(Image image) {
 
     }
 
     @Override
-    public void onClosed() {
+    public void onError(String message) {
 
     }
 
     @Override
-    public void onImage(CameraKitView cameraKitView, byte[] bytes) {
-        /*
-        Log.d(TAG, "Image received");
-        try {
-            Thread.sleep(750);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        cameraKitView.captureImage(this);*/
-    }
+    public void onCameraDisconnected() {
 
-    @Override
-    public void onFrame(CameraKitView cameraKitView, byte[] bytes) {
-        Log.d(TAG, "Image received");
-        try {
-            Thread.sleep(750);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        cameraKitView.captureFrame(this);
     }
 }

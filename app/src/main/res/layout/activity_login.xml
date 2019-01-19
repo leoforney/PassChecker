@@ -73,6 +73,15 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
+            <EditText
+                android:id="@+id/ip_address_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ip_prompt"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -17,6 +17,7 @@ class CredentialsManager {
     private SharedPreferences pref;
     private static CredentialsManager instance = null;
     private Base64 base64;
+    private Context context;
     TextView navEmail, navName;
 
     static CredentialsManager getInstance(Context context) {
@@ -27,6 +28,7 @@ class CredentialsManager {
     }
 
     CredentialsManager(Context context) {
+        this.context = context;
         pref = context.getSharedPreferences(getClass().getCanonicalName(), Context.MODE_PRIVATE);
         base64 = new Base64();
     }
@@ -75,5 +77,23 @@ class CredentialsManager {
         String[] split = tokenDecoded.split(":");
         editor.putString("email", split[0]);
         editor.apply();
+    }
+
+    void clearData() {
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("name", null);
+        editor.putString("token", null);
+        editor.apply();
+    }
+
+    void setIP(@NonNull String ip) {
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("ip", ip);
+        editor.apply();
+        Log.d("CredentialsManager", "IP set to: " + getIP());
+    }
+
+    String getIP() {
+        return pref.getString("ip", context.getResources().getString(R.string.server_url));
     }
 }

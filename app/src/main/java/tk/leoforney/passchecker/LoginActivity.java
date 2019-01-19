@@ -27,6 +27,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
@@ -40,7 +41,9 @@ import org.apache.commons.codec.binary.Base64;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.InetAddress;
 import java.net.URLDecoder;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -65,7 +68,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     // UI references.
     private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView;
+    private EditText mPasswordView, ipEditText;
     private View mProgressView;
     private View mLoginFormView;
 
@@ -89,6 +92,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+        ipEditText = findViewById(R.id.ip_address_edit_text);
+        ipEditText.setText(CredentialsManager.getInstance(this).getIP());
+
         Button mEmailSignInButton = findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -102,19 +108,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     private void populateAutoComplete() {
-        /*
         if (!mayRequestContacts()) {
             return;
-        }*/
-
-        Dexter.withActivity(this)
-                .withPermissions(
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.READ_CONTACTS
-                ).withListener(new MultiplePermissionsListener() {
-            @Override public void onPermissionsChecked(MultiplePermissionsReport report) {/* ... */}
-            @Override public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {/* ... */}
-        }).check();
+        }
 
         getLoaderManager().initLoader(0, null, this);
     }
@@ -176,6 +172,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         boolean cancel = false;
         View focusView = null;
 
+        /*if (!pingIP(ipEditText)) {
+            cancel = true;
+            Toast.makeText(this, "Failed to connect to server", Toast.LENGTH_SHORT).show();
+        }*/
+
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
@@ -202,6 +203,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
+            CredentialsManager.getInstance(this).setIP(ipEditText.getText().toString());
             mAuthTask = new UserLoginTask(this, email, password);
             mAuthTask.execute((Void) null);
         }
@@ -348,7 +350,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             Log.d(LoginActivity.class.getName(), token);
 
             Request request = new Request.Builder()
-                    .url("http://" + activity.getResources().getString(R.string.server_url) + "/user/validateuser/json")
+                    .url("http://" + CredentialsManager.getInstance(getApplicationContext()).getIP() + "/user/validateuser/json")
                     .get()
                     .header("Token", token)
                     .build();
@@ -360,6 +362,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 User user = gson.fromJson(responseString, User.class);
                 if (user != null) {
                     if (user.isValid() && decode(user.token).equals(token)) {
+                        //CredentialsManager.getInstance(activity).setIP();
                         CredentialsManager.getInstance(activity).setData(user.name, user.token);
                         return true;
                     }
@@ -404,6 +407,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             } catch (UnsupportedEncodingException e) {
                 return "Issue while decoding" +e.getMessage();
             }
+        }
+    }
+
+    boolean pingIP(EditText ip) {
+        InetAddress in;
+        in = null;
+        try {
+            in = InetAddress.getByName(ip.getText().toString());
+        } catch (UnknownHostException e) {
+            return false;
+        }
+        try {
+           return in.isReachable(5000);
+        } catch (IOException e) {
+            return false;
         }
     }
 }

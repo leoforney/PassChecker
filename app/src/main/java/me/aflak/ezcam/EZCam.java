@@ -139,7 +139,7 @@ public class EZCam {
                 previewSize = Collections.max(Arrays.asList(map.getOutputSizes(ImageFormat.JPEG)), new CompareSizesByArea());
                 imageReader = ImageReader.newInstance(previewSize.getWidth(), previewSize.getHeight(), ImageFormat.JPEG, 1);
                 imageReader.setOnImageAvailableListener(onImageAvailable, backgroundHandler);
-                previewImageReader = ImageReader.newInstance(previewSize.getWidth(), previewSize.getHeight(), ImageFormat.JPEG, 1);
+                previewImageReader = ImageReader.newInstance(previewSize.getWidth(), previewSize.getHeight(), ImageFormat.JPEG, 10);
                 previewImageReader.setOnImageAvailableListener(onPreviewAvailable, backgroundHandler);
             }
             else{
@@ -211,7 +211,8 @@ public class EZCam {
         try {
             captureRequestBuilder = cameraDevice.createCaptureRequest(templateType);
             captureRequestBuilder.addTarget(surface);
-            captureRequestBuilder.addTarget(previewImageReader.getSurface());
+            captureRequestBuilder.addTarget(imageReader.getSurface());
+            //captureRequestBuilder.addTarget(previewImageReader.getSurface());
 
             captureRequestBuilderImageReader = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
             captureRequestBuilderImageReader.addTarget(imageReader.getSurface());
@@ -390,6 +391,7 @@ public class EZCam {
                     if (image!=null)
                         image.close();
                 }
+                reader.close();
             }
         }
     };

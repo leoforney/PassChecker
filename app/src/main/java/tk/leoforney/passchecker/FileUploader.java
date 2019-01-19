@@ -45,7 +45,7 @@ public class FileUploader {
         MultipartBody requestBody = buildernew.build();
 
         Request request = new Request.Builder()
-                .url("http://" + activity.getResources().getString(R.string.server_url) + "/getStudentName")
+                .url("http://" + CredentialsManager.getInstance(activity).getIP() + "/getStudentName")
                 .addHeader("Token", CredentialsManager.getInstance(activity).getToken())
                 .post(requestBody)
                 .build();

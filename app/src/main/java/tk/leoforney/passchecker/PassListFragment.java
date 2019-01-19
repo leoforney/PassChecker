@@ -82,7 +82,7 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
     private void refreshData() {
         Request carRequest = new Request.Builder()
                 .get()
-                .url("http://" + getResources().getString(R.string.server_url) + "/pass/student/all/json")
+                .url("http://" + CredentialsManager.getInstance(getContext()).getIP() + "/pass/student/all/json")
                 .addHeader("Token", CredentialsManager.getInstance(getContext()).getToken())
                 .build();
 

@@ -1,5 +1,6 @@
 package tk.leoforney.passchecker;
 
+import android.Manifest;
 import android.content.Context;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraDevice;
@@ -14,6 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.camerakit.CameraKitView;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+
+import java.util.List;
 
 import androidx.fragment.app.Fragment;
 import me.aflak.ezcam.EZCam;
@@ -66,6 +74,15 @@ public class CameraFragment extends Fragment implements EZCamCallback {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Log.d(TAG, "Camera opened!");
+
+        Dexter.withActivity(getActivity())
+                .withPermissions(
+                        Manifest.permission.CAMERA
+                ).withListener(new MultiplePermissionsListener() {
+            @Override public void onPermissionsChecked(MultiplePermissionsReport report) {}
+            @Override public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {}
+        }).check();
+
         cam = new EZCam(getContext());
         textureView = view.findViewById(R.id.textureView);
         String id = cam.getCamerasList().get(CameraCharacteristics.LENS_FACING_BACK);

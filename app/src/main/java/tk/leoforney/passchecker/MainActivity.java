@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -20,11 +21,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     FragmentManager fm;
     Fragment listFrag;
     Fragment camFrag;
+    TextView ipTextView;
     NavigationView navigationView;
 
     @Override
@@ -39,6 +41,10 @@ public class MainActivity extends AppCompatActivity
         }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        ipTextView = findViewById(R.id.ip_address_textview);
+        ipTextView.setText(CredentialsManager.getInstance(this).getIP());
+
+        findViewById(R.id.logout).setOnClickListener(this);
         setSupportActionBar(toolbar);
         fm = getSupportFragmentManager();
 
@@ -132,4 +138,14 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.logout:
+                CredentialsManager.getInstance(this).clearData();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+            break;
+        }
+    }
 }

@@ -14,7 +14,7 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in to PassChecker Server</string>
+    <string name="action_sign_in">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
@@ -102,4 +102,5 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="ip_prompt">IP Address</string>
+    <string name="title_activity_qrscanner">QRScannerActivity</string>
 </resources>

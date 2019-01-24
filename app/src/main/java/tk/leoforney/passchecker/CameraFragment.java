@@ -56,11 +56,13 @@ public class CameraFragment extends Fragment implements EZCamCallback {
     public void onResume() {
         super.onResume();
         Log.d(TAG, "Started");
+        cam.restartPreview();
     }
 
     @Override
     public void onPause() {
         Log.d(TAG, "Paused");
+        cam.stopPreview();
         super.onPause();
     }
 
@@ -113,9 +115,19 @@ public class CameraFragment extends Fragment implements EZCamCallback {
         cam.startPreview();
     }
 
+    int imagesReceived = 0;
+
     @Override
     public void onPicture(Image image) {
-
+        Log.d(TAG, "Image receieved");
+        imagesReceived++;
+        if (imagesReceived > 15) {
+            // Run code in here to grab image every _ frames
+            imagesReceived = 0;
+        }
+        if (image != null) {
+            image.close();
+        }
     }
 
     @Override
@@ -125,6 +137,5 @@ public class CameraFragment extends Fragment implements EZCamCallback {
 
     @Override
     public void onCameraDisconnected() {
-
     }
 }

@@ -49,7 +49,10 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        client = new OkHttpClient.Builder().connectTimeout(3L, TimeUnit.SECONDS).build();
+        client = new OkHttpClient.Builder()
+                .connectTimeout(3L, TimeUnit.SECONDS)
+                .writeTimeout(3L, TimeUnit.SECONDS)
+                .build();
         gson = new Gson();
 
         Log.d(PassListFragment.class.getName(), "PassList requested");

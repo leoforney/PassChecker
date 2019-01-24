@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.RectF;
@@ -21,7 +20,6 @@ import android.media.ImageReader;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.util.Log;
 import android.util.Size;
 import android.util.SparseArray;
 import android.view.Gravity;
@@ -37,7 +35,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import androidx.annotation.NonNull;
-import androidx.legacy.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 
 /**
  * Class that simplifies the use of Camera 2 api
@@ -61,7 +59,6 @@ public class EZCam {
     private CaptureRequest.Builder captureRequestBuilder;
     private CaptureRequest.Builder captureRequestBuilderImageReader;
     private ImageReader imageReader;
-    private ImageReader previewImageReader;
 
     private HandlerThread backgroundThread;
     private Handler backgroundHandler;
@@ -137,10 +134,8 @@ public class EZCam {
             StreamConfigurationMap map = cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             if(map != null) {
                 previewSize = Collections.max(Arrays.asList(map.getOutputSizes(ImageFormat.JPEG)), new CompareSizesByArea());
-                imageReader = ImageReader.newInstance(previewSize.getWidth(), previewSize.getHeight(), ImageFormat.JPEG, 1);
+                imageReader = ImageReader.newInstance(previewSize.getWidth(), previewSize.getHeight(), ImageFormat.JPEG, 30);
                 imageReader.setOnImageAvailableListener(onImageAvailable, backgroundHandler);
-                previewImageReader = ImageReader.newInstance(previewSize.getWidth(), previewSize.getHeight(), ImageFormat.JPEG, 10);
-                previewImageReader.setOnImageAvailableListener(onPreviewAvailable, backgroundHandler);
             }
             else{
                 notifyError("Could not get configuration map.");
@@ -207,12 +202,12 @@ public class EZCam {
 
     private void setupPreview_(int templateType, TextureView textureView){
         Surface surface = new Surface(textureView.getSurfaceTexture());
+        Surface mImageSurface = imageReader.getSurface();
 
         try {
             captureRequestBuilder = cameraDevice.createCaptureRequest(templateType);
             captureRequestBuilder.addTarget(surface);
-            captureRequestBuilder.addTarget(imageReader.getSurface());
-            //captureRequestBuilder.addTarget(previewImageReader.getSurface());
+            captureRequestBuilder.addTarget(mImageSurface);
 
             captureRequestBuilderImageReader = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
             captureRequestBuilderImageReader.addTarget(imageReader.getSurface());
@@ -378,43 +373,6 @@ public class EZCam {
         public void onImageAvailable(ImageReader reader) {
             if(cameraCallback != null){
                 cameraCallback.onPicture(imageReader.acquireLatestImage());
-                Image image = null;
-                try {
-                    image = reader.acquireLatestImage();
-                    final Image.Plane[] planes = image.getPlanes();
-                    final ByteBuffer buffer = planes[0].getBuffer();
-                    buffer.rewind();
-                    final byte[] data = new byte[buffer.capacity()];
-                    buffer.get(data);
-                    Log.d("EZCam", "Frame received");
-                } catch (Exception e) {
-                    if (image!=null)
-                        image.close();
-                }
-                reader.close();
-            }
-        }
-    };
-
-    private ImageReader.OnImageAvailableListener onPreviewAvailable = new ImageReader.OnImageAvailableListener() {
-        @Override
-        public void onImageAvailable(ImageReader reader) {
-            if(cameraCallback != null){
-                cameraCallback.onPicture(imageReader.acquireLatestImage());
-                Image image = null;
-                try {
-                    image = reader.acquireLatestImage();
-                    //final Image.Plane[] planes = image.getPlanes();
-                    //final ByteBuffer buffer = planes[0].getBuffer();
-                    //buffer.rewind();
-                    //final byte[] data = new byte[buffer.capacity()];
-                    //buffer.get(data);
-                    Log.d("EZCam", "Frame received");
-                } catch (Exception e) {
-                    if (image!=null)
-                        image.close();
-                    reader.close();
-                }
             }
         }
     };

@@ -1,12 +1,12 @@
 package tk.leoforney.passchecker;
 
-import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
@@ -27,15 +27,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.MultiplePermissionsReport;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import org.apache.commons.codec.binary.Base64;
 
@@ -49,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -59,10 +54,11 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor>, OnClickListener {
 
 
     private static final int REQUEST_READ_CONTACTS = 0;
+    private static final int REQUEST_QR_CODE = 101;
 
     private UserLoginTask mAuthTask = null;
 
@@ -102,6 +98,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 attemptLogin();
             }
         });
+
+        findViewById(R.id.qr_sign_in_button).setOnClickListener(this);
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -296,6 +294,61 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailView.setAdapter(adapter);
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.qr_sign_in_button:
+                Intent qrIntent = new Intent(LoginActivity.this, QRScannerActivity.class);
+                startActivityForResult(qrIntent, REQUEST_QR_CODE);
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("LoginActivity", "result detected");
+
+        if (resultCode != Activity.RESULT_OK) {
+            Log.d("LoginActivity", "COULD NOT GET A GOOD RESULT.");
+            if (data == null)
+                return;
+            //Getting the passed result
+            String result = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
+            if (result != null) {
+                AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+                alertDialog.setTitle("Scan Error");
+                alertDialog.setMessage("QR Code could not be scanned");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+            return;
+
+        }
+        if (requestCode == REQUEST_QR_CODE) {
+            if (data == null)
+                return;
+            //Getting the passed result
+            String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_result");
+            Log.d("LoginActivity", "Have scan result in your app activity :" + result);
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("Scan result");
+            alertDialog.setMessage(result);
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+
+        }
+    }
+
 
     private interface ProfileQuery {
         String[] PROJECTION = {
@@ -399,13 +452,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             try {
                 String prevURL = "";
                 String decodeURL = url;
-                while(!prevURL.equals(decodeURL)) {
+                while (!prevURL.equals(decodeURL)) {
                     prevURL = decodeURL;
-                    decodeURL = URLDecoder.decode( decodeURL, "UTF-8" );
+                    decodeURL = URLDecoder.decode(decodeURL, "UTF-8");
                 }
                 return decodeURL;
             } catch (UnsupportedEncodingException e) {
-                return "Issue while decoding" +e.getMessage();
+                return "Issue while decoding" + e.getMessage();
             }
         }
     }
@@ -419,7 +472,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             return false;
         }
         try {
-           return in.isReachable(5000);
+            return in.isReachable(5000);
         } catch (IOException e) {
             return false;
         }

@@ -1,0 +1,2679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="jni"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jni">
+				<Option output="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/jni.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 jni"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jni/fast">
+				<Option output="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/jni.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 jni/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/Android.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/Application.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/Android.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/Parameters.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/Parameters.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/UVCButtonCallback.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/UVCButtonCallback.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/UVCCamera.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/UVCCamera.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/UVCPreview.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/UVCPreview.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/UVCStatusCallback.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/UVCStatusCallback.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/_onload.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/_onload.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/libUVCCamera.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/objectarray.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/AbstractBufferedPipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/AbstractBufferedPipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/CallbackPipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/CallbackPipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/CaptureBasePipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/CaptureBasePipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/ConvertPipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/ConvertPipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/DistributePipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/DistributePipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/IPipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/IPipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/PreviewPipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/PreviewPipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/PublisherPipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/PublisherPipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/SQLiteBufferedPipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/SQLiteBufferedPipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/SimpleBufferedPipeline.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/SimpleBufferedPipeline.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/pipeline_helper.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/pipeline/pipeline_helper.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/serenegiant_usb_UVCCamera.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/UVCCamera/utilbase.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/Android.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/BUILDING.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/CMakeLists.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/ChangeLog.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/LICENSE.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/Makefile.am">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/Makefile.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/README.ijg">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/README.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/acinclude.m4">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/aclocal.m4">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/ar-lib">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/bmp.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/bmp.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/cderror.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/cdjpeg.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/cdjpeg.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/cjpeg.1">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/cjpeg.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/cmakescripts/testclean.cmake">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/coderules.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/compile">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/config.guess">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/config.h.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/config.sub">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/configure">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/configure.ac">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/depcomp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/djpeg.1">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/djpeg.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/annotated.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/bc_s.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/bdwn.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/classes.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/closed.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/doxygen-extra.css">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/doxygen.css">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/doxygen.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/dynsections.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2blank.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2cl.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2doc.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2folderclosed.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2folderopen.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2lastnode.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2link.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2mlastnode.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2mnode.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2mo.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2node.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2ns.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2plastnode.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2pnode.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2splitbar.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/ftv2vertline.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/functions.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/functions_vars.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/group___turbo_j_p_e_g.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/index.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/jquery.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/modules.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/nav_f.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/nav_g.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/nav_h.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/open.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_63.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_63.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_64.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_64.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_68.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_68.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_6e.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_6e.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_6f.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_6f.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_72.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_72.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_74.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_74.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_77.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_77.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_78.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_78.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_79.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/all_79.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/classes_74.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/classes_74.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/close.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/enums_74.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/enums_74.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/enumvalues_74.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/enumvalues_74.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/functions_74.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/functions_74.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/groups_74.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/groups_74.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/mag_sel.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/nomatches.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/search.css">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/search.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/search_l.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/search_m.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/search_r.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/typedefs_74.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/typedefs_74.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_63.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_63.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_64.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_64.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_68.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_68.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_6e.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_6e.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_6f.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_6f.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_72.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_72.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_74.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_74.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_77.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_77.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_78.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_78.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_79.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/search/variables_79.js">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/structtjregion.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/structtjscalingfactor.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/structtjtransform.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/sync_off.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/sync_on.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/tab_a.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/tab_b.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/tab_h.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/tab_s.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doc/html/tabs.css">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doxygen-extra.css">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/doxygen.config">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/example.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/include/config.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/include/jconfig.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/include/jconfigint.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/include/jsimdcfg.inc">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/install-sh">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jaricom.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/CMakeLists.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/MANIFEST.MF">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/Makefile.am">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/Makefile.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/README">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/TJBench.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/TJExample.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/TJUnitTest.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/allclasses-frame.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/allclasses-noframe.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/constant-values.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/deprecated-list.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/help-doc.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/index-all.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/index.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/TJ.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/TJCompressor.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/TJCustomFilter.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/TJDecompressor.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/TJException.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/TJScalingFactor.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/TJTransform.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/TJTransformer.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/YUVImage.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/package-frame.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/package-summary.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/org/libjpegturbo/turbojpeg/package-tree.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/overview-tree.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/package-list">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/resources/background.gif">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/resources/tab.gif">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/resources/titlebar.gif">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/resources/titlebar_end.gif">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/serialized-form.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/doc/stylesheet.css">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJ.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJCompressor.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJCustomFilter.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJDecompressor.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJException.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJLoader.java.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJLoader.java.tmpl">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJScalingFactor.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJTransform.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/TJTransformer.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org/libjpegturbo/turbojpeg/YUVImage.java">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org_libjpegturbo_turbojpeg_TJ.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org_libjpegturbo_turbojpeg_TJCompressor.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org_libjpegturbo_turbojpeg_TJDecompressor.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/java/org_libjpegturbo_turbojpeg_TJTransformer.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcapimin.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcapistd.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcarith.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jccoefct.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jccolext.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jccolor.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcdctmgr.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jchuff.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jchuff.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcinit.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcmainct.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcmarker.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcmaster.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcomapi.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jconfig.h.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jconfig.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jconfigint.h.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcparam.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcphuff.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcprepct.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcsample.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jcstest.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jctrans.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdapimin.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdapistd.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdarith.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdatadst-tj.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdatadst.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdatasrc-tj.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdatasrc.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdcoefct.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdcoefct.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdcol565.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdcolext.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdcolor.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdct.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jddctmgr.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdhuff.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdhuff.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdinput.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdmainct.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdmainct.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdmarker.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdmaster.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdmaster.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdmerge.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdmrg565.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdmrgext.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdphuff.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdpostct.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdsample.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdsample.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jdtrans.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jerror.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jerror.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jfdctflt.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jfdctfst.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jfdctint.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jidctflt.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jidctfst.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jidctint.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jidctred.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jinclude.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jmemmgr.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jmemnobs.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jmemsys.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jmorecfg.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jpeg_nbits_table.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jpegcomp.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jpegint.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jpeglib.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jpegtran.1">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jpegtran.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jquant1.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jquant2.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jsimd.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jsimd_none.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jsimddct.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jstdhuff.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jutils.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/jversion.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/libjpeg.map.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/libjpeg.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/ltmain.sh">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/md5/CMakeLists.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/md5/Makefile.am">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/md5/Makefile.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/md5/md5.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/md5/md5.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/md5/md5cmp.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/md5/md5hl.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/missing">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/rdbmp.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/rdcolmap.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/rdgif.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/rdjpgcom.1">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/rdjpgcom.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/rdppm.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/rdrle.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/rdswitch.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/rdtarga.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/Distribution.xml">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/License.rtf">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/ReadMe.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/Welcome.rtf">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/deb-control.tmpl">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/libjpeg-turbo.nsi.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/libjpeg-turbo.spec.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/libjpeg.pc.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/libturbojpeg.pc.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/makecygwinpkg.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/makedpkg.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/makemacpkg.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/release/uninstall.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/sharedlib/CMakeLists.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/CMakeLists.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/Makefile.am">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/Makefile.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jccolext-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jccolext-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jccolext-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jccolext-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jccolor-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jccolor-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jccolor-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jccolor-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcgray-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcgray-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcgray-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcgray-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcgryext-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcgryext-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcgryext-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcgryext-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jchuff-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jchuff-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcolsamp.inc">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcsample-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcsample-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcsample-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcsample-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jcsample.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdcolext-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdcolext-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdcolext-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdcolext-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdcolor-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdcolor-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdcolor-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdcolor-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdct.inc">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdmerge-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdmerge-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdmerge-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdmerge-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdmrgext-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdmrgext-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdmrgext-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdmrgext-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdsample-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdsample-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdsample-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jdsample-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctflt-3dn.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctflt-sse-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctflt-sse.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctfst-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctfst-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctfst-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctfst-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctint-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctint-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctint-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jfdctint-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctflt-3dn.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctflt-sse.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctflt-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctflt-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctfst-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctfst-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctfst-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctfst-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctint-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctint-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctint-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctint-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctred-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctred-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jidctred-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jpeg_nbits_table.inc">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jquant-3dn.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jquant-mmx.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jquant-sse.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jquantf-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jquantf-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jquanti-altivec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jquanti-sse2-64.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jquanti-sse2.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_altivec.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_arm.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_arm64.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_arm64_neon.S">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_arm_neon.S">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_i386.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_mips.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_mips_dspr2.S">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_mips_dspr2_asm.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_powerpc.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimd_x86_64.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimdcfg.inc.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimdcpu.asm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/jsimdext.inc">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/simd/nasm_lt.sh">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/structure.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/nightshot_iso_100.bmp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/nightshot_iso_100.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/testimgari.jpg">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/testimgint.jpg">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/testorig.jpg">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/testorig.ppm">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/testorig12.jpg">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/vgl_5674_0098.bmp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/vgl_6434_0018a.bmp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/testimages/vgl_6548_0026a.bmp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/tjbench.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/tjbenchtest.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/tjbenchtest.java.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/tjexampletest.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/tjunittest.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/tjutil.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/tjutil.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/transupp.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/transupp.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/turbojpeg-jni.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/turbojpeg-mapfile">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/turbojpeg-mapfile.jni">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/turbojpeg.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/turbojpeg.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/usage.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/win/jconfig.h.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/win/jconfigint.h.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/win/jpeg62-memsrcdst.def">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/win/jpeg62.def">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/win/jpeg7-memsrcdst.def">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/win/jpeg7.def">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/win/jpeg8.def">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/win/jsimdcfg.inc">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/wizard.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/wrbmp.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/wrgif.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/wrjpgcom.1">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/wrjpgcom.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/wrppm.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/wrppm.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/wrrle.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libjpeg-turbo-1.5.0/wrtarga.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/.private/README.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/.private/bd.cmd">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/.private/bm.sh">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/.private/bwince.cmd">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/.private/post-rewrite.sh">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/.private/pre-commit.sh">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/.private/wbs.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/.private/wbs_wince.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/AUTHORS">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/COPYING">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/ChangeLog">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/INSTALL">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/INSTALL_WIN.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/Makefile.am">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/NEWS">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/PORTING">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/README">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/README.git">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/TODO">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/Xcode/common.xcconfig">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/Xcode/config.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/Xcode/debug.xcconfig">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/Xcode/libusb.xcconfig">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/Xcode/libusb.xcodeproj/project.pbxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/Xcode/libusb_debug.xcconfig">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/Xcode/libusb_release.xcconfig">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/Xcode/release.xcconfig">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/README">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/config.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/config_original.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/jni/Android.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/jni/Android_original.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/jni/Application.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/jni/examples.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/jni/libusb.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/jni/libusb_original.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/android/jni/tests.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/autogen.sh">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/bootstrap.sh">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/configure.ac">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/doc/Makefile.am">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/doc/doxygen.cfg.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/doc/libusb.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/Makefile.am">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/dpfp.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/dpfp_threaded.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/ezusb.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/ezusb.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/fxload.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/getopt/getopt.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/getopt/getopt.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/getopt/getopt1.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/hotplugtest.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/listdevs.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/sam3u_benchmark.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/examples/xusb.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb-1.0.pc.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/Makefile.am">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/config.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/core.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/core_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/descriptor.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/descriptor_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/hotplug.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/hotplug.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/hotplug_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/io.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/io_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/libusb-1.0.def">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/libusb-1.0.rc">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/libusb.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/libusb_original.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/libusbi.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/libusbi_original.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/android_netlink.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/android_usbfs.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/android_usbfs.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/darwin_usb.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/darwin_usb.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/linux_netlink.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/linux_udev.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/linux_usbfs.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/linux_usbfs.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/netbsd_usb.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/openbsd_usb.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/poll_posix.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/poll_posix.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/poll_posix_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/poll_windows.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/poll_windows.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/threads_posix.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/threads_posix.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/threads_windows.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/threads_windows.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/wince_usb.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/wince_usb.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/windows_common.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/windows_usb.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/os/windows_usb.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/strerror.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/sync.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/sync_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/version.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/libusb/version_nano.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/config.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/ddk_build.cmd">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/errno.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/fxload_2010.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/fxload_2010.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/fxload_2012.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/fxload_2012.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/fxload_2013.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/fxload_sources">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/getopt_2005.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/getopt_2010.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/getopt_2010.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/getopt_2012.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/getopt_2012.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/getopt_2013.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/getopt_sources">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/hotplugtest_2010.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/hotplugtest_2010.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/hotplugtest_2012.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/hotplugtest_2012.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/hotplugtest_2013.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/hotplugtest_sources">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/inttypes.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb.dsw">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_2005.sln">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_2010.sln">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_2012.sln">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_2013.sln">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_dll.dsp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_dll_2005.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_dll_2010.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_dll_2010.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_dll_2012.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_dll_2012.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_dll_2013.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_dll_wince.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_sources">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_static.dsp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_static_2005.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_static_2010.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_static_2010.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_static_2012.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_static_2012.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_static_2013.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_static_wince.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/libusb_wince.sln">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/listdevs.dsp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/listdevs_2005.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/listdevs_2010.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/listdevs_2010.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/listdevs_2012.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/listdevs_2012.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/listdevs_2013.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/listdevs_sources">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/listdevs_wince.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/missing.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/missing.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/stdint.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/stress_2005.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/stress_2010.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/stress_2010.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/stress_2012.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/stress_2012.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/stress_2013.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/stress_wince.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/xusb.dsp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/xusb_2005.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/xusb_2010.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/xusb_2010.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/xusb_2012.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/xusb_2012.vcxproj.filters">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/xusb_2013.vcxproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/xusb_sources">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/msvc/xusb_wince.vcproj">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/tests/Makefile.am">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/tests/libusb_testlib.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/tests/stress.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libusb/tests/testlib.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/CMakeLists.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/README.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/android/jni/Android.mk">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/cameras/isight_imac.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/cameras/isight_macbook.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/cameras/ms_lifecam_show.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/cameras/quickcampro9000.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/cameras/quickcampro9000_builtin_ctrls.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/cameras/quickcampro9000_extra_ctrls.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/changelog.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/doxygen.conf">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/include/libuvc/libuvc.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/include/libuvc/libuvc_config.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/include/libuvc/libuvc_config.h.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/include/libuvc/libuvc_internal.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/include/libuvc/libuvc_internal_original.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/include/libuvc/libuvc_original.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/include/utlist.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/libuvcConfig.cmake.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/libuvcConfigVersion.cmake.in">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/ctrl.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/ctrl_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/device.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/device_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/diag.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/diag_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/example.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/frame-mjpeg.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/frame-mjpeg_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/frame.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/frame_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/init.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/init_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/misc.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/stream.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/stream_original.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/libuvc/src/test.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/localdefines.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/.gitmodules">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/.travis.yml">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/insituparsing.dot">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/insituparsing.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/iterative-parser-states-diagram.dot">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/iterative-parser-states-diagram.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/makefile">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/move1.dot">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/move1.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/move2.dot">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/move2.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/move3.dot">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/move3.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/normalparsing.dot">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/normalparsing.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/simpledom.dot">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/simpledom.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/tutorial.dot">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/diagram/tutorial.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/dom.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/encoding.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/faq.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/features.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/internals.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/logo/rapidjson.png">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/logo/rapidjson.svg">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/misc/DoxygenLayout.xml">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/misc/doxygenextra.css">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/misc/footer.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/misc/header.html">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/performance.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/sax.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/stream.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/doc/tutorial.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/capitalize/capitalize.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/condense/condense.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/messagereader/messagereader.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/pretty/pretty.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/prettyauto/prettyauto.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/serialize/serialize.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/simpledom/simpledom.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/simplereader/simplereader.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/simplewriter/simplewriter.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/example/tutorial/tutorial.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/allocators.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/document.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/encodedstream.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/encodings.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/error/en.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/error/error.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/filereadstream.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/filestream.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/filewritestream.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/internal/dtoa.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/internal/itoa.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/internal/meta.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/internal/pow10.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/internal/stack.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/internal/strfunc.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/memorybuffer.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/memorystream.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/msinttypes/inttypes.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/msinttypes/stdint.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/prettywriter.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/rapidjson.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/reader.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/stringbuffer.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/include/rapidjson/writer.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/license.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/readme.md">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/perftest/jsoncpptest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/perftest/misctest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/perftest/perftest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/perftest/perftest.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/perftest/platformtest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/perftest/rapidjsontest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/perftest/ultrajsontest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/perftest/yajl_all.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/perftest/yajltest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/documenttest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/encodedstreamtest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/encodingstest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/filestreamtest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/jsoncheckertest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/readertest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/unittest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/unittest.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/valuetest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/test/unittest/writertest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/AUTHORS">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/LICENSE">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/README.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/include/json/autolink.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/include/json/config.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/include/json/features.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/include/json/forwards.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/include/json/json.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/include/json/reader.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/include/json/value.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/include/json/writer.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/jsontestrunner/main.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/jsontestrunner/sconscript">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/lib_json/json_batchallocator.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/lib_json/json_internalarray.inl">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/lib_json/json_internalmap.inl">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/lib_json/json_reader.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/lib_json/json_value.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/lib_json/json_valueiterator.inl">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/lib_json/json_writer.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/lib_json/sconscript">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/test_lib_json/jsontest.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/test_lib_json/jsontest.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/test_lib_json/main.cpp">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/src/test_lib_json/sconscript">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/jsoncpp/version">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/ultrajson/README">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/ultrajson/ultrajson.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/ultrajson/ultrajsondec.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/ultrajson/ultrajsonenc.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/COPYING">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/ChangeLog">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/README">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/TODO">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/include/yajl/yajl_common.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/include/yajl/yajl_gen.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/include/yajl/yajl_parse.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/include/yajl/yajl_tree.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/include/yajl/yajl_version.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/CMakeLists.txt">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/YAJL.dxy">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/api/yajl_common.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/api/yajl_gen.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/api/yajl_parse.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/api/yajl_tree.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/api/yajl_version.h.cmake">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_alloc.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_alloc.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_buf.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_buf.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_bytestack.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_encode.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_encode.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_gen.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_lex.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_lex.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_parser.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_parser.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_tree.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/rapidjson/thirdparty/yajl/src/yajl_version.c">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/utilbase.h">
+			<Option target="jni"/>
+		</Unit>
+		<Unit filename="C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

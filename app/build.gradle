@@ -52,5 +52,5 @@ dependencies {
     implementation 'commons-codec:commons-codec:1.11'
     implementation 'com.sun.net.httpserver:http:20070405'
     implementation 'com.karumi:dexter:5.0.0'
-
+    implementation 'com.google.android.gms:play-services-vision:17.0.2'
 }

@@ -1,0 +1,3 @@
+C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/CMakeFiles/jni.dir
+C:/Users/Leo/AndroidStudioProjects/PassChecker/libuvccamera/src/main/jni/cmake-build-debug/CMakeFiles/rebuild_cache.dir

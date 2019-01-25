@@ -33,7 +33,6 @@ public class FileUploader {
         gson = new Gson();
     }
 
-    //@Override
     public void onImage(/*CameraKitImage cameraKitImage*/) {
         byte[] data = new byte[5];//cameraKitImage.getJpeg();
         Log.d(TAG, "Data received: " + data.length);

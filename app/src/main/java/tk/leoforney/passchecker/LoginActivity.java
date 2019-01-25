@@ -333,18 +333,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             if (data == null)
                 return;
             //Getting the passed result
-            String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_result");
-            Log.d("LoginActivity", "Have scan result in your app activity :" + result);
-            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-            alertDialog.setTitle("Scan result");
-            alertDialog.setMessage(result);
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-            alertDialog.show();
+            String result = data.getStringExtra("tk.leoforney.passchecker.qr_token_data_ok");
+            String tokenData = new String(android.util.Base64.decode(result, android.util.Base64.DEFAULT));
+            String[] tokenSplit = tokenData.split("-");
+            if (tokenSplit[1].toUpperCase().equals("EMPTY")) {
+                ipEditText.setText(tokenSplit[0]);
+            } else {
+                CredentialsManager.getInstance(this).setIP(tokenSplit[0]);
+                String userTokenDecoded = new String(android.util.Base64.decode(tokenSplit[1], android.util.Base64.DEFAULT));
+                String userTokenSplit[] = userTokenDecoded.split(":");
+                mAuthTask = new UserLoginTask(this, userTokenSplit[0], userTokenSplit[1]);
+                mAuthTask.execute((Void) null);
+            }
 
         }
     }
@@ -403,7 +403,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             Log.d(LoginActivity.class.getName(), token);
 
             Request request = new Request.Builder()
-                    .url("http://" + CredentialsManager.getInstance(getApplicationContext()).getIP() + "/user/validateuser/json")
+                    .url("http://" + CredentialsManager.getInstance(getApplicationContext()).getIP() +
+                            "/user/validateuser/json")
                     .get()
                     .header("Token", token)
                     .build();

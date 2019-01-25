@@ -54,12 +54,6 @@ public class QRScannerActivity extends AppCompatActivity {
             public void onDecoded(@NonNull final Result result) {
                 final String resultData = result.getText();
                 finishWithResult(resultData);
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(), resultData, Toast.LENGTH_SHORT).show();
-                    }
-                });
             }
         });
         scannerView.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +78,7 @@ public class QRScannerActivity extends AppCompatActivity {
 
     private void finishWithResult(@NonNull String data) {
         Bundle conData = new Bundle();
-        conData.putString("param_result", data);
+        conData.putString("tk.leoforney.passchecker.qr_token_data_ok", data);
         Intent intent = new Intent();
         intent.putExtras(conData);
         setResult(RESULT_OK, intent);

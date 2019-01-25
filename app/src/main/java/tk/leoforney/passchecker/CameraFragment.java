@@ -56,13 +56,11 @@ public class CameraFragment extends Fragment implements EZCamCallback {
     public void onResume() {
         super.onResume();
         Log.d(TAG, "Started");
-        cam.restartPreview();
     }
 
     @Override
     public void onPause() {
         Log.d(TAG, "Paused");
-        cam.stopPreview();
         super.onPause();
     }
 

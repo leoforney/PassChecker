@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Surface;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -18,7 +17,6 @@ import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.jiangdg.usbcamera.UVCCameraHelper;
-import com.jiangdg.usbcamera.utils.FileUtils;
 import com.serenegiant.usb.CameraDialog;
 import com.serenegiant.usb.Size;
 import com.serenegiant.usb.USBMonitor;
@@ -47,72 +45,11 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
 
     private UVCCameraHelper mCameraHelper;
     private CameraViewInterface mUVCCameraView;
+    private FileUploader uploader;
     private AlertDialog mDialog;
 
     private boolean isRequest;
     private boolean isPreview;
-
-    private UVCCameraHelper.OnMyDevConnectListener listener = new UVCCameraHelper.OnMyDevConnectListener() {
-
-        @Override
-        public void onAttachDev(UsbDevice device) {
-            if (mCameraHelper == null || mCameraHelper.getUsbDeviceCount() == 0) {
-                showShortMsg("No USB Camera");
-                return;
-            }
-            // request open permission
-            if (!isRequest) {
-                isRequest = true;
-                if (mCameraHelper != null) {
-                    mCameraHelper.requestPermission(0);
-                }
-            }
-        }
-
-        @Override
-        public void onDettachDev(UsbDevice device) {
-            // close camera
-            if (isRequest) {
-                isRequest = false;
-                mCameraHelper.closeCamera();
-                showShortMsg(device.getDeviceName() + " is out");
-            }
-        }
-
-        @Override
-        public void onConnectDev(UsbDevice device, boolean isConnected) {
-            if (!isConnected) {
-                showShortMsg("Failed to connect, check params");
-                isPreview = false;
-            } else {
-                isPreview = true;
-                showShortMsg("Connecting to camera");
-                // initialize seekbar
-                // need to wait UVCCamera initialize over
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(2500);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        Looper.prepare();
-                        if(mCameraHelper != null && mCameraHelper.isCameraOpened()) {
-                            mSeekBrightness.setProgress(mCameraHelper.getModelValue(UVCCameraHelper.MODE_BRIGHTNESS));
-                            mSeekContrast.setProgress(mCameraHelper.getModelValue(UVCCameraHelper.MODE_CONTRAST));
-                        }
-                        Looper.loop();
-                    }
-                }).start();
-            }
-        }
-
-        @Override
-        public void onDisConnectDev(UsbDevice device) {
-            showShortMsg("Disconnecting");
-        }
-    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -120,12 +57,12 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
         setContentView(R.layout.activity_usbcamera);
         ButterKnife.bind(this);
         initView();
-        mReturnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(USBCameraActivity.this, MainActivity.class));
-                finish();
-            }
+
+        uploader = new FileUploader(this);
+
+        mReturnButton.setOnClickListener(v -> {
+            startActivity(new Intent(USBCameraActivity.this, MainActivity.class));
+            finish();
         });
 
         // step.1 initialize UVCCameraHelper
@@ -135,13 +72,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
         mCameraHelper.setDefaultFrameFormat(UVCCameraHelper.FRAME_FORMAT_YUYV);
         mCameraHelper.initUSBMonitor(this, mUVCCameraView, listener);
 
-
-        mCameraHelper.setOnPreviewFrameListener(new AbstractUVCCameraHandler.OnPreViewResultListener() {
-            @Override
-            public void onPreviewResult(byte[] nv21Yuv) {
-                Log.d(TAG, "Byte data received");
-            }
-        });
+        mCameraHelper.setOnPreviewFrameListener(nv21Yuv -> Log.d(TAG, "Byte data received"));
     }
 
     private void initView() {
@@ -185,6 +116,65 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
             }
         });
     }
+
+    private UVCCameraHelper.OnMyDevConnectListener listener = new UVCCameraHelper.OnMyDevConnectListener() {
+
+        @Override
+        public void onAttachDev(UsbDevice device) {
+            if (mCameraHelper == null || mCameraHelper.getUsbDeviceCount() == 0) {
+                showShortMsg("No USB Camera");
+                return;
+            }
+            // request open permission
+            if (!isRequest) {
+                isRequest = true;
+                if (mCameraHelper != null) {
+                    mCameraHelper.requestPermission(0);
+                }
+            }
+        }
+
+        @Override
+        public void onDettachDev(UsbDevice device) {
+            // close camera
+            if (isRequest) {
+                isRequest = false;
+                mCameraHelper.closeCamera();
+                showShortMsg(device.getDeviceName() + " is out");
+            }
+        }
+
+        @Override
+        public void onConnectDev(UsbDevice device, boolean isConnected) {
+            if (!isConnected) {
+                showShortMsg("Failed to connect, check params");
+                isPreview = false;
+            } else {
+                isPreview = true;
+                showShortMsg("Connecting to camera");
+                // initialize seekbar
+                // need to wait UVCCamera initialize over
+                new Thread(() -> {
+                    try {
+                        Thread.sleep(2500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Looper.prepare();
+                    if(mCameraHelper != null && mCameraHelper.isCameraOpened()) {
+                        mSeekBrightness.setProgress(mCameraHelper.getModelValue(UVCCameraHelper.MODE_BRIGHTNESS));
+                        mSeekContrast.setProgress(mCameraHelper.getModelValue(UVCCameraHelper.MODE_CONTRAST));
+                    }
+                    Looper.loop();
+                }).start();
+            }
+        }
+
+        @Override
+        public void onDisConnectDev(UsbDevice device) {
+            showShortMsg("Disconnecting");
+        }
+    };
 
     @Override
     protected void onStart() {
@@ -234,25 +224,22 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
     private void showResolutionListDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(USBCameraActivity.this);
         View rootView = LayoutInflater.from(USBCameraActivity.this).inflate(R.layout.layout_dialog_list, null);
-        ListView listView = (ListView) rootView.findViewById(R.id.listview_dialog);
+        ListView listView = rootView.findViewById(R.id.listview_dialog);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(USBCameraActivity.this, android.R.layout.simple_list_item_1, getResolutionList());
         if (adapter != null) {
             listView.setAdapter(adapter);
         }
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                if (mCameraHelper == null || !mCameraHelper.isCameraOpened())
-                    return;
-                final String resolution = (String) adapterView.getItemAtPosition(position);
-                String[] tmp = resolution.split("x");
-                if (tmp != null && tmp.length >= 2) {
-                    int widht = Integer.valueOf(tmp[0]);
-                    int height = Integer.valueOf(tmp[1]);
-                    mCameraHelper.updateResolution(widht, height);
-                }
-                mDialog.dismiss();
+        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+            if (mCameraHelper == null || !mCameraHelper.isCameraOpened())
+                return;
+            final String resolution = (String) adapterView.getItemAtPosition(position);
+            String[] tmp = resolution.split("x");
+            if (tmp != null && tmp.length >= 2) {
+                int widht = Integer.valueOf(tmp[0]);
+                int height = Integer.valueOf(tmp[1]);
+                mCameraHelper.updateResolution(widht, height);
             }
+            mDialog.dismiss();
         });
 
         builder.setView(rootView);
@@ -278,7 +265,6 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        FileUtils.releaseFile();
         // step.4 release uvc camera resources
         if (mCameraHelper != null) {
             mCameraHelper.release();

@@ -15,8 +15,8 @@
             android:title="Camera" />
         <item
             android:id="@+id/action_uvc_camera"
-            android:icon="@android:drawable/ic_menu_send"
-            android:title="UVC Camera" />
+            android:icon="@drawable/ic_usb_camera"
+            android:title="USB Camera" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

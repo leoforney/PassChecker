@@ -1,6 +1,7 @@
 package tk.leoforney.passchecker;
 
 import android.app.Activity;
+import android.media.Image;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -33,8 +34,8 @@ public class FileUploader {
         gson = new Gson();
     }
 
-    public void onImage(/*CameraKitImage cameraKitImage*/) {
-        byte[] data = new byte[5];//cameraKitImage.getJpeg();
+    public void onImage(Image image) {
+        byte[] data = image.getPlanes()[0].getBuffer().array();
         Log.d(TAG, "Data received: " + data.length);
 
         MultipartBody.Builder buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
@@ -42,6 +43,8 @@ public class FileUploader {
         RequestBody imageBody = RequestBody.create(type, data);
         buildernew.addFormDataPart("image", "tempImage", imageBody);
         MultipartBody requestBody = buildernew.build();
+
+        Log.d(TAG, "Image ready to upload");
 
         Request request = new Request.Builder()
                 .url("http://" + CredentialsManager.getInstance(activity).getIP() + "/getStudentName")
@@ -64,7 +67,6 @@ public class FileUploader {
                     @Override
                     public void run() {
                         Toast.makeText(activity, "Student name: " + responseString, Toast.LENGTH_LONG).show();
-
                     }
                 });
             }

@@ -120,7 +120,7 @@ public class CameraFragment extends Fragment implements EZCamCallback {
         Log.d(TAG, "Image receieved");
         imagesReceived++;
         if (imagesReceived > 15) {
-            // Run code in here to grab image every _ frames
+            uploader.onImage(image);
             imagesReceived = 0;
         }
         if (image != null) {

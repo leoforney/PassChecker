@@ -46,7 +46,7 @@ public class QRScannerActivity extends AppCompatActivity {
             public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
 
             }
-        });
+        }).check();
         CodeScannerView scannerView = findViewById(R.id.scanner_view);
         mCodeScanner = new CodeScanner(this, scannerView);
         mCodeScanner.setDecodeCallback(new DecodeCallback() {

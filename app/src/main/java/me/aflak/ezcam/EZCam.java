@@ -134,7 +134,7 @@ public class EZCam {
             StreamConfigurationMap map = cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             if(map != null) {
                 previewSize = Collections.max(Arrays.asList(map.getOutputSizes(ImageFormat.JPEG)), new CompareSizesByArea());
-                imageReader = ImageReader.newInstance(previewSize.getWidth(), previewSize.getHeight(), ImageFormat.YUV_420_888, 60);
+                imageReader = ImageReader.newInstance(previewSize.getWidth(), previewSize.getHeight(), ImageFormat.YUV_420_888, 5);
                 imageReader.setOnImageAvailableListener(onImageAvailable, backgroundHandler);
             }
             else{
@@ -144,8 +144,8 @@ public class EZCam {
             notifyError(e.getMessage());
         }
     }
-
     /**
+
      * Open camera to prepare preview
      * @param templateType capture mode e.g. CameraDevice.TEMPLATE_PREVIEW
      * @param textureView Surface where preview should be displayed

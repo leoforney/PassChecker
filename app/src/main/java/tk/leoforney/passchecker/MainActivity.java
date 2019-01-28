@@ -129,6 +129,8 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.contentFragment, camFrag);
         } else if (id == R.id.nav_manage) {
 
+        } else if (id == R.id.action_uvc_camera) {
+            startActivity(new Intent(this, USBCameraActivity.class));
         }
 
         transaction.commit();

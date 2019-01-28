@@ -14,7 +14,6 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.camerakit.CameraKitView;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -98,7 +97,8 @@ public class CameraFragment extends Fragment implements EZCamCallback {
 
     @Override
     public void onDetach() {
-
+        cam.stopPreview();
+        cam.close();
         super.onDetach();
     }
 
@@ -120,9 +120,10 @@ public class CameraFragment extends Fragment implements EZCamCallback {
         Log.d(TAG, "Image receieved");
         imagesReceived++;
         if (imagesReceived > 15) {
-            uploader.onImage(image);
+            //uploader.onImage(image);
             imagesReceived = 0;
         }
+        image.getPlanes()[0].getBuffer();
         if (image != null) {
             image.close();
         }

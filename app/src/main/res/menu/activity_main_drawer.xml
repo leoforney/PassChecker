@@ -21,6 +21,10 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="User management" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_menu_search"
+            android:title="Pass Search" />
     </group>
 
     <item android:title="Communicate"

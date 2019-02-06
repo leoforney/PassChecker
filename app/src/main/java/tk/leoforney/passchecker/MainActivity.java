@@ -11,6 +11,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Random;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -28,10 +30,10 @@ public class MainActivity extends AppCompatActivity
     Fragment camFrag;
     TextView ipTextView;
     NavigationView navigationView;
+    //ThemeColors themeColors;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        listFrag = PassListFragment.newInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         }
+
+        listFrag = PassListFragment.newInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         ipTextView = findViewById(R.id.ip_address_textview);
@@ -49,13 +53,8 @@ public class MainActivity extends AppCompatActivity
         fm = getSupportFragmentManager();
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -76,6 +75,8 @@ public class MainActivity extends AppCompatActivity
         transaction.replace(R.id.contentFragment, listFrag).commit();
 
         CredentialsManager.getInstance(this).setDisplayData(this);
+
+        //themeColors = new ThemeColors(this);
     }
 
     @Override
@@ -97,13 +98,17 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if (id == R.id.action_retrieve_color) {
+            int red= new Random().nextInt(255);
+            int green= new Random().nextInt(255);
+            int blue= new Random().nextInt(255);
+            //ThemeColors.setNewThemeColor(MainActivity.this, red, green, blue);
             return true;
         }
 
@@ -150,4 +155,5 @@ public class MainActivity extends AppCompatActivity
             break;
         }
     }
+
 }

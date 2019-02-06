@@ -49,9 +49,7 @@ public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnP
     @Override
     public void onPicture(Image image) {
         byte[] jpegData = NV21toJPEG(YUV420toNV21(image), image.getWidth(), image.getHeight(), 100);
-        javaxt.io.Image imagext = new javaxt.io.Image(jpegData);
-        imagext.rotateCounterClockwise();
-        upload(imagext.getByteArray());
+        upload(jpegData);
     }
 
     @Override
@@ -109,29 +107,6 @@ public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnP
     @Override
     public void onPreviewResult(byte[] bytes) {
 
-    }
-
-    private byte[] rotateYUV420Degree90(byte[] data, int imageWidth, int imageHeight) {
-        byte[] yuv = new byte[imageWidth * imageHeight * 3 / 2];
-        // Rotate the Y luma
-        int i = 0;
-        for (int x = 0; x < imageWidth; x++) {
-            for (int y = imageHeight - 1; y >= 0; y--) {
-                yuv[i] = data[y * imageWidth + x];
-                i++;
-            }
-        }
-        // Rotate the U and V color components
-        i = imageWidth * imageHeight * 3 / 2 - 1;
-        for (int x = imageWidth - 1; x > 0; x = x - 2) {
-            for (int y = 0; y < imageHeight / 2; y++) {
-                yuv[i] = data[(imageWidth * imageHeight) + (y * imageWidth) + x];
-                i--;
-                yuv[i] = data[(imageWidth * imageHeight) + (y * imageWidth) + (x - 1)];
-                i--;
-            }
-        }
-        return yuv;
     }
 
     private static byte[] NV21toJPEG(byte[] nv21, int width, int height, int quality) {

@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="35dp"
-    android:id="@+id/swipe_refresh_students">
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
-        android:name="tk.leoforney.passchecker.PassListFragment"
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/searchBar"
+        style="@style/MaterialSearchBarLight"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:orientation="vertical"
-        android:paddingTop="20dp"
-        tools:context=".PassListFragment" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="10dp"
+        app:mt_hint="Custom hint"
+        app:mt_searchBarColor="@color/LIGHTGRAY"
+        app:mt_roundedSearchBarEnabled="true"
+        app:mt_maxSuggestionsCount="10"
+        app:mt_placeholder="Search ID or Plate Number"
+        app:mt_speechMode="false" />
 
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_alignTop="@id/searchBar"
+        android:id="@+id/swipe_refresh_students">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:name="tk.leoforney.passchecker.PassListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            tools:context=".PassListFragment" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

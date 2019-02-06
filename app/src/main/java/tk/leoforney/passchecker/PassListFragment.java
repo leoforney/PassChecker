@@ -2,6 +2,8 @@ package tk.leoforney.passchecker;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.mancj.materialsearchbar.MaterialSearchBar;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -28,13 +31,17 @@ import okhttp3.Request;
 import okhttp3.Response;
 import tk.leoforney.passchecker.student.StudentListAdapter;
 
-public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
+public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, MaterialSearchBar.OnSearchActionListener, TextWatcher {
 
     private OkHttpClient client;
     private Gson gson;
     public StudentListAdapter adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
+    private MaterialSearchBar searchBar;
+    private List<Student> studentList;
 
     public PassListFragment() {
     }
@@ -63,6 +70,8 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_students, container, false);
 
+        LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+
         recyclerView = view.findViewById(R.id.list);
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_students);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -71,6 +80,10 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
                 R.color.refresh_progress_1,
                 R.color.refresh_progress_2,
                 R.color.refresh_progress_3);
+
+        searchBar = view.findViewById(R.id.searchBar);
+        searchBar.setOnSearchActionListener(this);
+        searchBar.addTextChangeListener(this);
 
         refreshData();
 
@@ -106,18 +119,68 @@ public class PassListFragment extends Fragment implements SwipeRefreshLayout.OnR
                     Log.d("PassListFragment", body);
                     Type listType = new TypeToken<ArrayList<Student>>() {
                     }.getType();
-                    List<Student> studentList = gson.fromJson(body, listType);
+                    studentList = gson.fromJson(body, listType);
                     adapter = new StudentListAdapter(studentList);
-                    Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            recyclerView.setAdapter(adapter);
-                            swipeRefreshLayout.setRefreshing(false);
-                        }
+                    Objects.requireNonNull(getActivity()).runOnUiThread(() -> {
+                        recyclerView.swapAdapter(adapter, true);
+                        swipeRefreshLayout.setRefreshing(false);
                     });
                 }
             });
         }
         swipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    public void onSearchStateChanged(boolean enabled) {
+
+    }
+
+    @Override
+    public void onSearchConfirmed(CharSequence text) {
+
+    }
+
+    @Override
+    public void onButtonClicked(int buttonCode) {
+
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        adapter.getFilter().filter(charSequence);
+        recyclerView.swapAdapter(recyclerView.getAdapter(), true);
+        /*
+        if (studentList != null) {
+            suggestionAdapter.clearSuggestions();
+            for (Student iteratedStudent: studentList) {
+                boolean studentAdded = false;
+                if (String.valueOf(iteratedStudent.id).toLowerCase().replace(" ", "").contains(charSequence) ||
+                        iteratedStudent.name.toLowerCase().replace(" ", "").contains(charSequence)) {
+                    Log.d("PassListFragment", "Student added: " + iteratedStudent.name);
+                    suggestionAdapter.addSuggestion(iteratedStudent);
+                    studentAdded = true;
+                }
+                if (!studentAdded) {
+                    for (Car car: iteratedStudent.cars) {
+                        if (car.plateNumber.toLowerCase().replace(" ", "").contains(charSequence)) {
+                            Log.d("PassListFragment", "Car added: " + car.plateNumber);
+                            suggestionAdapter.addSuggestion(iteratedStudent);
+                            studentAdded = true;
+                        }
+                    }
+                }
+            }
+        }*/
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
     }
 }

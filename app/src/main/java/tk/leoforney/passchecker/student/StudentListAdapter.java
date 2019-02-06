@@ -4,6 +4,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 
 import com.bignerdranch.expandablerecyclerview.ExpandableRecyclerAdapter;
 
@@ -15,7 +17,7 @@ import tk.leoforney.passchecker.Car;
 import tk.leoforney.passchecker.R;
 import tk.leoforney.passchecker.Student;
 
-public class StudentListAdapter extends ExpandableRecyclerAdapter<Student, Car, StudentViewHolder, CarViewHolder> {
+public class StudentListAdapter extends ExpandableRecyclerAdapter<Student, Car, StudentViewHolder, CarViewHolder> implements Filterable {
 
     /**
      * Primary constructor. Sets up {@link #mParentList} and {@link #mFlatItemList}.
@@ -40,6 +42,16 @@ public class StudentListAdapter extends ExpandableRecyclerAdapter<Student, Car, 
         super(parentList);
         students = parentList;
         Log.d("StudentListAdapter", "There are " + parentList.size() + " students");
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students.clear();
+        this.students.addAll(students);
+        for (Student student: students) {
+            Log.d("StudentListAdapter", student.name);
+        }
+        notifyDataSetChanged();
+        notifyParentDataSetChanged(true);
     }
 
     @UiThread
@@ -68,5 +80,10 @@ public class StudentListAdapter extends ExpandableRecyclerAdapter<Student, Car, 
     @Override
     public void onBindChildViewHolder(@NonNull CarViewHolder childViewHolder, int parentPosition, int childPosition, @NonNull Car child) {
         childViewHolder.bind(child);
+    }
+
+    @Override
+    public Filter getFilter() {
+        return FilterHelper.newInstance(students,this);
     }
 }

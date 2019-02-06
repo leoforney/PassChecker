@@ -6,4 +6,11 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:visible="false"
+        android:id="@+id/action_retrieve_color"
+        android:orderInCategory="200"
+        android:title="Retrieve Colors"
+        app:showAsAction="never" />
 </menu>

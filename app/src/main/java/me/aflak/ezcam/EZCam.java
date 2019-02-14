@@ -206,7 +206,7 @@ public class EZCam {
 
         try {
             captureRequestBuilder = cameraDevice.createCaptureRequest(templateType);
-            captureRequestBuilder.addTarget(surface);
+            //captureRequestBuilder.addTarget(surface);
             captureRequestBuilder.addTarget(mImageSurface);
 
             captureRequestBuilderImageReader = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);

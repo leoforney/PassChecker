@@ -26,7 +26,7 @@ import androidx.fragment.app.Fragment;
 import me.aflak.ezcam.EZCam;
 import me.aflak.ezcam.EZCamCallback;
 
-public class CameraFragment extends Fragment implements EZCamCallback {
+public class CameraFragment extends Fragment implements EZCamCallback, ServerListener {
 
     private static final String TAG = "CameraFragment";
     private EZCam cam;
@@ -136,5 +136,10 @@ public class CameraFragment extends Fragment implements EZCamCallback {
 
     @Override
     public void onCameraDisconnected() {
+    }
+
+    @Override
+    public void response(DatabaseResponse resposne) {
+
     }
 }

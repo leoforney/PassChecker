@@ -6,7 +6,6 @@ import android.graphics.Rect;
 import android.graphics.YuvImage;
 import android.media.Image;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.serenegiant.usb.common.AbstractUVCCameraHandler;
@@ -31,6 +30,7 @@ public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnP
     Activity activity;
     OkHttpClient client;
     Gson gson;
+    ServerListener listener;
     private final static String TAG = "FileUploader";
 
     public FileUploader(Activity activity) {
@@ -39,6 +39,14 @@ public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnP
                 .writeTimeout(3L, TimeUnit.SECONDS)
                 .build();
         gson = new Gson();
+    }
+
+    public void setServerListener(ServerListener listener) {
+        this.listener = listener;
+    }
+
+    public void removeServerListener() {
+        this.listener = null;
     }
 
     @Override
@@ -63,7 +71,6 @@ public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnP
     }
 
     public void upload(byte[] data) {
-
         Log.d(TAG, "Data received: " + data.length);
 
         MultipartBody.Builder buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
@@ -75,8 +82,9 @@ public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnP
         Log.d(TAG, "Image ready to upload");
 
         Request request = new Request.Builder()
-                .url("http://" + CredentialsManager.getInstance(activity).getIP() + "/plateNumber")
+                .url("http://" + CredentialsManager.getInstance(activity).getIP() + "/checkInDatabase")
                 .addHeader("Token", CredentialsManager.getInstance(activity).getToken())
+                .addHeader("Sender", "Mobile")
                 .post(requestBody)
                 .build();
 
@@ -88,16 +96,11 @@ public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnP
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+                assert response.body() != null;
                 final String responseString = response.body().string();
-                Log.d(TAG, "Response: " + responseString);
-                if (!responseString.toLowerCase().contains("no plates")) {
-                    //Student student = gson.fromJson(responseString, Student.class);
-                    activity.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(activity, "Plate Number: " + responseString, Toast.LENGTH_LONG).show();
-                        }
-                    });
+                DatabaseResponse databaseResponse = gson.fromJson(responseString, DatabaseResponse.class);
+                if (listener != null) {
+                    listener.response(databaseResponse);
                 }
             }
         });

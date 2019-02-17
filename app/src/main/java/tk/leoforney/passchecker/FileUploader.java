@@ -98,6 +98,7 @@ public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnP
             public void onResponse(Call call, Response response) throws IOException {
                 assert response.body() != null;
                 final String responseString = response.body().string();
+                Log.d(TAG, responseString);
                 DatabaseResponse databaseResponse = gson.fromJson(responseString, DatabaseResponse.class);
                 if (listener != null) {
                     listener.response(databaseResponse);

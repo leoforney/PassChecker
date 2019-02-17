@@ -155,7 +155,6 @@ public class EZCam {
             notifyError("You don't have the required permissions.");
             return;
         }
-        textureView.setOpaque(false);
 
         startBackgroundThread();
 
@@ -203,7 +202,6 @@ public class EZCam {
 
     private void setupPreview_(int templateType, TextureView textureView){
         Surface surface = new Surface(textureView.getSurfaceTexture());
-        //Surface surface = new Surface(new SurfaceTexture(10));
         Surface mImageSurface = imageReader.getSurface();
 
         try {
@@ -234,10 +232,10 @@ public class EZCam {
     }
 
     private void setupPreview(final int templateType, final TextureView outputSurface){
-        //if(outputSurface.isAvailable()){
+        if(outputSurface.isAvailable()){
             setupPreview_(templateType, outputSurface);
-        //}
-        //else{
+        }
+        else{
             outputSurface.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() {
                 @Override
                 public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
@@ -249,7 +247,7 @@ public class EZCam {
                 public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {return false;}
                 public void onSurfaceTextureUpdated(SurfaceTexture surface) {}
             });
-        //}
+        }
     }
 
     /**

@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
@@ -22,6 +23,7 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import java.util.List;
 
+import androidx.annotation.UiThread;
 import androidx.fragment.app.Fragment;
 import me.aflak.ezcam.EZCam;
 import me.aflak.ezcam.EZCamCallback;
@@ -31,6 +33,8 @@ public class CameraFragment extends Fragment implements EZCamCallback, ServerLis
     private static final String TAG = "CameraFragment";
     private EZCam cam;
     private TextureView textureView;
+    TextView plateNumberTextView;
+    TextView studentNameTextView;
     FileUploader uploader;
 
     public CameraFragment() {
@@ -48,6 +52,7 @@ public class CameraFragment extends Fragment implements EZCamCallback, ServerLis
     @Override
     public void onCreate(Bundle savedInstanceState) {
         uploader = new FileUploader(getActivity());
+        uploader.setServerListener(this);
         super.onCreate(savedInstanceState);
     }
 
@@ -67,7 +72,8 @@ public class CameraFragment extends Fragment implements EZCamCallback, ServerLis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_camera, container, false);
+        View view = inflater.inflate(R.layout.fragment_camera, container, false);
+        return view;
     }
 
     @Override
@@ -78,16 +84,28 @@ public class CameraFragment extends Fragment implements EZCamCallback, ServerLis
                 .withPermissions(
                         Manifest.permission.CAMERA
                 ).withListener(new MultiplePermissionsListener() {
-            @Override public void onPermissionsChecked(MultiplePermissionsReport report) {}
-            @Override public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {}
+            @Override
+            public void onPermissionsChecked(MultiplePermissionsReport report) {
+            }
+
+            @Override
+            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+            }
         }).check();
 
         cam = new EZCam(getContext());
         textureView = view.findViewById(R.id.textureView);
+        studentNameTextView = view.findViewById(R.id.textview_student_name_camera_result);
+        plateNumberTextView = view.findViewById(R.id.textview_plate_number_camera_result);
         String id = cam.getCamerasList().get(CameraCharacteristics.LENS_FACING_BACK);
         cam.selectCamera(id);
         cam.setCameraCallback(this);
         cam.open(CameraDevice.TEMPLATE_PREVIEW, textureView);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 
     @Override
@@ -139,7 +157,15 @@ public class CameraFragment extends Fragment implements EZCamCallback, ServerLis
     }
 
     @Override
-    public void response(DatabaseResponse resposne) {
+    @UiThread
+    public void response(DatabaseResponse response) {
+        Log.d(TAG, "Response type: " + response.getType());
+        if (response.getType().equals(DatabaseResponse.Type.OK)) {
+            getActivity().runOnUiThread(() -> {
+                plateNumberTextView.setText("Plate #: " + response.getPlateNumber().toUpperCase());
+                studentNameTextView.setText("Student: " + response.getStudent().name);
+            });
 
+        }
     }
 }

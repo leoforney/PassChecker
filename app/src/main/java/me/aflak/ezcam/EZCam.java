@@ -353,6 +353,7 @@ public class EZCam {
      */
     public void close(){
         cameraDevice.close();
+        imageReader.close();
         stopBackgroundThread();
     }
 

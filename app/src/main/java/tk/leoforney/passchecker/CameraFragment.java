@@ -25,6 +25,8 @@ import java.util.List;
 
 import androidx.annotation.UiThread;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import me.aflak.ezcam.EZCam;
 import me.aflak.ezcam.EZCamCallback;
 
@@ -35,7 +37,10 @@ public class CameraFragment extends Fragment implements EZCamCallback, ServerLis
     private TextureView textureView;
     TextView plateNumberTextView;
     TextView studentNameTextView;
-    FileUploader uploader;
+    RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private PlateFailedAdapter adapter;
+    ImageChecker uploader;
 
     public CameraFragment() {
 
@@ -51,7 +56,7 @@ public class CameraFragment extends Fragment implements EZCamCallback, ServerLis
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        uploader = new FileUploader(getActivity());
+        uploader = new ImageChecker(getActivity());
         uploader.setServerListener(this);
         super.onCreate(savedInstanceState);
     }
@@ -95,8 +100,16 @@ public class CameraFragment extends Fragment implements EZCamCallback, ServerLis
 
         cam = new EZCam(getContext());
         textureView = view.findViewById(R.id.textureView);
+
         studentNameTextView = view.findViewById(R.id.textview_student_name_camera_result);
         plateNumberTextView = view.findViewById(R.id.textview_plate_number_camera_result);
+
+        recyclerView = view.findViewById(R.id.pass_failed_result_recyclerview);
+        layoutManager = new LinearLayoutManager(this.getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new PlateFailedAdapter(getActivity());
+        recyclerView.setAdapter(adapter);
+
         String id = cam.getCamerasList().get(CameraCharacteristics.LENS_FACING_BACK);
         cam.selectCamera(id);
         cam.setCameraCallback(this);
@@ -160,12 +173,17 @@ public class CameraFragment extends Fragment implements EZCamCallback, ServerLis
     @UiThread
     public void response(DatabaseResponse response) {
         Log.d(TAG, "Response type: " + response.getType());
-        if (response.getType().equals(DatabaseResponse.Type.OK)) {
-            getActivity().runOnUiThread(() -> {
-                plateNumberTextView.setText("Plate #: " + response.getPlateNumber().toUpperCase());
-                studentNameTextView.setText("Student: " + response.getStudent().name);
-            });
-
+        switch (response.getType()) {
+            case OK:
+                getActivity().runOnUiThread(() -> {
+                    plateNumberTextView.setText("Plate #: " + response.getPlateNumber().toUpperCase());
+                    studentNameTextView.setText("Student: " + response.getStudent().name);
+                });
+                break;
+            case PLATEONLY:
+                adapter.addResponse(response);
+                getActivity().runOnUiThread(adapter::notifyDataSetChanged);
+                break;
         }
     }
 }

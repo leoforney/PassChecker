@@ -13,6 +13,9 @@ import com.serenegiant.usb.common.AbstractUVCCameraHandler;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import me.aflak.ezcam.EZCamCallback;
@@ -25,15 +28,15 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnPreViewResultListener {
+public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnPreViewResultListener {
 
     Activity activity;
     OkHttpClient client;
     Gson gson;
     ServerListener listener;
-    private final static String TAG = "FileUploader";
+    private final static String TAG = "ImageChecker";
 
-    public FileUploader(Activity activity) {
+    public ImageChecker(Activity activity) {
         this.activity = activity;
         client = new OkHttpClient.Builder()
                 .writeTimeout(3L, TimeUnit.SECONDS)
@@ -175,5 +178,40 @@ public class FileUploader implements EZCamCallback, AbstractUVCCameraHandler.OnP
             }
         }
         return data;
+    }
+
+    private static double threshold = 50; // Similarity threshold in percentage out of 100
+
+    public static boolean similarityOfStrings(String s1, String s2, double threshold) {
+        double similarityCount = 0;
+        double totalCount = 0;
+        List<Character> s1chars = charList(s1.toLowerCase().replace(" ", "").toCharArray());
+        List<Character> s2chars = charList(s2.toLowerCase().replace(" ", "").toCharArray());
+        for (char iterateChar: s1chars) {
+            for (int i = 0; i < s2chars.size(); i++) {
+                char iteratedChar2 = s2chars.get(i);
+                totalCount++;
+                if (iterateChar == iteratedChar2) {
+                    similarityCount++;
+                    s2chars.remove(i);
+                }
+            }
+        }
+        double percentage = ((similarityCount/totalCount) * 200);
+        Log.d(TAG, "S: " + similarityCount + " T: " + totalCount + " " + percentage + "%");
+        if (percentage > threshold) return true;
+        return false;
+    }
+
+    public static boolean similarityOfStrings(String s1, String s2) {
+        return similarityOfStrings(s1, s2, threshold);
+    }
+
+    public static List<Character> charList(char[] array) {
+        List<Character> chars = new ArrayList<>();
+        for (char ch: array) {
+            chars.add(ch);
+        }
+        return chars;
     }
 }

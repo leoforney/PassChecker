@@ -20,7 +20,6 @@ import com.jiangdg.usbcamera.UVCCameraHelper;
 import com.serenegiant.usb.CameraDialog;
 import com.serenegiant.usb.Size;
 import com.serenegiant.usb.USBMonitor;
-import com.serenegiant.usb.common.AbstractUVCCameraHandler;
 import com.serenegiant.usb.widget.CameraViewInterface;
 
 import java.util.ArrayList;
@@ -45,7 +44,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
 
     private UVCCameraHelper mCameraHelper;
     private CameraViewInterface mUVCCameraView;
-    private FileUploader uploader;
+    private ImageChecker uploader;
     private AlertDialog mDialog;
 
     private boolean isRequest;
@@ -58,7 +57,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
         ButterKnife.bind(this);
         initView();
 
-        uploader = new FileUploader(this);
+        uploader = new ImageChecker(this);
 
         mReturnButton.setOnClickListener(v -> {
             startActivity(new Intent(USBCameraActivity.this, MainActivity.class));

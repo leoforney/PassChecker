@@ -40,6 +40,16 @@ public class DatabaseResponse {
     private Type type;
     private String plateNumber = "";
 
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    private String timestamp;
+
     public DatabaseResponse(Student student, Car car, Type type) {
         this.student = student;
         this.car = car;

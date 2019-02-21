@@ -31,7 +31,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class USBCameraActivity extends AppCompatActivity implements CameraDialog.CameraDialogParent, CameraViewInterface.Callback {
+public class USBCameraActivity extends AppCompatActivity implements ServerListener, CameraDialog.CameraDialogParent, CameraViewInterface.Callback {
     private static final String TAG = "USBCameraActivity";
     @BindView(R.id.camera_view)
     public View mTextureView;
@@ -58,6 +58,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
         initView();
 
         uploader = new ImageChecker(this);
+        uploader.setServerListener(this);
 
         mReturnButton.setOnClickListener(v -> {
             startActivity(new Intent(USBCameraActivity.this, MainActivity.class));
@@ -71,7 +72,10 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
         mCameraHelper.setDefaultFrameFormat(UVCCameraHelper.FRAME_FORMAT_YUYV);
         mCameraHelper.initUSBMonitor(this, mUVCCameraView, listener);
 
-        mCameraHelper.setOnPreviewFrameListener(nv21Yuv -> Log.d(TAG, "Byte data received"));
+        //mCameraHelper.setOnPreviewFrameListener(nv21Yuv -> Log.d(TAG, "Byte data received"));
+        uploader.height = mCameraHelper.getPreviewHeight();
+        uploader.width = mCameraHelper.getPreviewWidth();
+        mCameraHelper.setOnPreviewFrameListener(uploader);
     }
 
     private void initView() {
@@ -309,5 +313,10 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
             mCameraHelper.stopPreview();
             isPreview = false;
         }
+    }
+
+    @Override
+    public void response(DatabaseResponse response) {
+
     }
 }

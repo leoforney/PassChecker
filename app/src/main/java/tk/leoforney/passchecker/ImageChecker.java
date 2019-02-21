@@ -14,7 +14,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -59,7 +58,7 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
 
     @Override
     public void onPicture(Image image) {
-        byte[] jpegData = NV21toJPEG(YUV420toNV21(image), image.getWidth(), image.getHeight(), 100);
+        byte[] jpegData = NV21toJPEG(YUV420toNV21(image), image.getWidth(), image.getHeight());
         upload(jpegData);
     }
 
@@ -110,16 +109,19 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
         });
     }
 
+    public int width, height;
+
     // Keep in mind, we're using nv21Yuv as it's most efficient in the sample
     @Override
-    public void onPreviewResult(byte[] bytes) {
-
+    public void onPreviewResult(byte[] nv21Yuv) {
+        byte[] jpegData = NV21toJPEG(nv21Yuv, width, height);
+        upload(jpegData);
     }
 
-    private static byte[] NV21toJPEG(byte[] nv21, int width, int height, int quality) {
+    private static byte[] NV21toJPEG(byte[] nv21, int width, int height) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         YuvImage yuv = new YuvImage(nv21, ImageFormat.NV21, width, height, null);
-        yuv.compressToJpeg(new Rect(0, 0, width, height), quality, out);
+        yuv.compressToJpeg(new Rect(0, 0, width, height), 95, out);
         return out.toByteArray();
     }
 
@@ -184,20 +186,19 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
 
     public static boolean similarityOfStrings(String s1, String s2, double threshold) {
         double similarityCount = 0;
-        double totalCount = 0;
+        double totalCount = (s1.length() + s2.length()) / 2;
         List<Character> s1chars = charList(s1.toLowerCase().replace(" ", "").toCharArray());
         List<Character> s2chars = charList(s2.toLowerCase().replace(" ", "").toCharArray());
         for (char iterateChar: s1chars) {
             for (int i = 0; i < s2chars.size(); i++) {
                 char iteratedChar2 = s2chars.get(i);
-                totalCount++;
                 if (iterateChar == iteratedChar2) {
                     similarityCount++;
                     s2chars.remove(i);
                 }
             }
         }
-        double percentage = ((similarityCount/totalCount) * 200);
+        double percentage = ((similarityCount/totalCount) * 100);
         Log.d(TAG, "S: " + similarityCount + " T: " + totalCount + " " + percentage + "%");
         if (percentage > threshold) return true;
         return false;

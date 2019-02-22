@@ -114,8 +114,9 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
     // Keep in mind, we're using nv21Yuv as it's most efficient in the sample
     @Override
     public void onPreviewResult(byte[] nv21Yuv) {
+        Log.d(TAG, "Byte data received from USB Camera");
         byte[] jpegData = NV21toJPEG(nv21Yuv, width, height);
-        upload(jpegData);
+        //upload(jpegData);
     }
 
     private static byte[] NV21toJPEG(byte[] nv21, int width, int height) {
@@ -182,7 +183,7 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
         return data;
     }
 
-    private static double threshold = 50; // Similarity threshold in percentage out of 100
+    private static double threshold = 45; // Similarity threshold in percentage out of 100
 
     public static boolean similarityOfStrings(String s1, String s2, double threshold) {
         double similarityCount = 0;

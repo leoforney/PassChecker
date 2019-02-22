@@ -270,6 +270,8 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
         super.onDestroy();
         // step.4 release uvc camera resources
         if (mCameraHelper != null) {
+            mCameraHelper.getUSBMonitor().unregister();
+            mCameraHelper.getUSBMonitor().destroy();
             mCameraHelper.release();
         }
     }

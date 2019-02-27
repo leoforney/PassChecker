@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.ImageFormat;
 import android.graphics.Rect;
 import android.graphics.YuvImage;
+import android.hardware.Camera;
 import android.media.Image;
 import android.util.Log;
 
@@ -27,7 +28,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnPreViewResultListener {
+public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnPreViewResultListener, Camera.PreviewCallback {
 
     Activity activity;
     OkHttpClient client;
@@ -215,5 +216,10 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
             chars.add(ch);
         }
         return chars;
+    }
+
+    @Override
+    public void onPreviewFrame(byte[] bytes, Camera camera) {
+        upload(bytes);
     }
 }

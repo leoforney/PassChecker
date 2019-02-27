@@ -22,6 +22,7 @@
     </FrameLayout>
 
     <LinearLayout
+        android:visibility="invisible"
         android:id="@+id/llayout_contrast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,6 +50,7 @@
 
     <LinearLayout
         android:id="@+id/llayout_brightness"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/llayout_contrast"

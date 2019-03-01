@@ -126,7 +126,7 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
     private static byte[] NV21toJPEG(byte[] nv21, int width, int height) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         YuvImage yuv = new YuvImage(nv21, ImageFormat.NV21, width, height, null);
-        yuv.compressToJpeg(new Rect(0, 0, width, height), 75, out);
+        yuv.compressToJpeg(new Rect(0, 0, width, height), 90, out);
         return out.toByteArray();
     }
 

@@ -40,6 +40,7 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
         this.activity = activity;
         client = new OkHttpClient.Builder()
                 .writeTimeout(3L, TimeUnit.SECONDS)
+                .cache(null)
                 .build();
         gson = new Gson();
     }
@@ -74,40 +75,42 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
     }
 
     public void upload(byte[] data) {
-        Log.d(TAG, "Data received: " + data.length);
+        if (data != null) {
+            Log.d(TAG, "Data received: " + data.length);
 
-        MultipartBody.Builder buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
-        MediaType type = MediaType.parse("image/jpeg");
-        RequestBody imageBody = RequestBody.create(type, data);
-        buildernew.addFormDataPart("image", "tempImage", imageBody);
-        MultipartBody requestBody = buildernew.build();
+            MultipartBody.Builder buildernew = new MultipartBody.Builder().setType(MultipartBody.FORM);
+            MediaType type = MediaType.parse("image/jpeg");
+            RequestBody imageBody = RequestBody.create(type, data);
+            buildernew.addFormDataPart("image", "image.jpg", imageBody);
+            MultipartBody requestBody = buildernew.build();
 
-        Log.d(TAG, "Image ready to upload");
+            Log.d(TAG, "Image ready to upload");
 
-        Request request = new Request.Builder()
-                .url("http://" + CredentialsManager.getInstance(activity).getIP() + "/checkInDatabase")
-                .addHeader("Token", CredentialsManager.getInstance(activity).getToken())
-                .addHeader("Sender", "Mobile")
-                .post(requestBody)
-                .build();
+            Request request = new Request.Builder()
+                    .url("http://" + CredentialsManager.getInstance(activity).getIP() + "/checkInDatabase")
+                    .addHeader("Token", CredentialsManager.getInstance(activity).getToken())
+                    .addHeader("Sender", "Mobile")
+                    .post(requestBody)
+                    .build();
 
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                assert response.body() != null;
-                final String responseString = response.body().string();
-                Log.d(TAG, responseString);
-                DatabaseResponse databaseResponse = gson.fromJson(responseString, DatabaseResponse.class);
-                if (listener != null) {
-                    listener.response(databaseResponse);
+            client.newCall(request).enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
+                    e.printStackTrace();
                 }
-            }
-        });
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                    assert response.body() != null;
+                    final String responseString = response.body().string();
+                    Log.d(TAG, responseString);
+                    DatabaseResponse databaseResponse = gson.fromJson(responseString, DatabaseResponse.class);
+                    if (listener != null) {
+                        listener.response(databaseResponse);
+                    }
+                }
+            });
+        }
     }
 
     public int width, height;
@@ -123,7 +126,7 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
     private static byte[] NV21toJPEG(byte[] nv21, int width, int height) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         YuvImage yuv = new YuvImage(nv21, ImageFormat.NV21, width, height, null);
-        yuv.compressToJpeg(new Rect(0, 0, width, height), 95, out);
+        yuv.compressToJpeg(new Rect(0, 0, width, height), 75, out);
         return out.toByteArray();
     }
 
@@ -220,6 +223,20 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
 
     @Override
     public void onPreviewFrame(byte[] bytes, Camera camera) {
-        upload(bytes);
+        Camera.Parameters parameters = camera.getParameters();
+        int format = parameters.getPreviewFormat();
+        //YUV formats require more conversion
+        if (format == ImageFormat.NV21 || format == ImageFormat.YUY2 || format == ImageFormat.NV16) {
+            int w = parameters.getPreviewSize().width;
+            int h = parameters.getPreviewSize().height;
+            byte[] dataJpg = NV21toJPEG(bytes, w, h);
+            Log.d(TAG, "Byte data received from Camera");
+            if (dataJpg != null) {
+                upload(dataJpg);
+            }
+            System.gc();
+            camera.addCallbackBuffer(null);
+        }
+
     }
 }

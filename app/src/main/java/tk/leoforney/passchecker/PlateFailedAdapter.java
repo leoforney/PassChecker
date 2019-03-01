@@ -98,7 +98,7 @@ public class PlateFailedAdapter extends RecyclerView.Adapter<PlateFailedAdapter.
 
         holder.viewImage.setOnClickListener(view -> {
             String url = "http://" + CredentialsManager.getInstance(parent).getIP() +
-                    "/" + holder.response.getTimestamp() + ".jpg";
+                    "/submissions/" + holder.response.getTimestamp() + ".jpg";
             Log.d(TAG, "Fetching image from: " + url);
             ImageView imageView = new ImageView(parent);
             Glide.with(parent).load(url)

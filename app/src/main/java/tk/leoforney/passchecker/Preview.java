@@ -16,6 +16,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
+@SuppressWarnings("deprecated")
 class Preview extends ViewGroup implements SurfaceHolder.Callback {
     private final String TAG = "Preview";
 
@@ -24,9 +25,11 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
     Size mPreviewSize;
     List<Size> mSupportedPreviewSizes;
     Camera mCamera;
+    ImageChecker uploader;
 
-    Preview(Context context, SurfaceView sv) {
+    Preview(Context context, SurfaceView sv, ImageChecker uploader) {
         super(context);
+        this.uploader = uploader;
 
         mSurfaceView = sv;
 //        addView(mSurfaceView);
@@ -102,6 +105,8 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
         // to draw.
         try {
             if (mCamera != null) {
+                mCamera.setDisplayOrientation(90);
+                mCamera.setPreviewCallback(uploader);
                 mCamera.setPreviewDisplay(holder);
             }
         } catch (IOException exception) {
@@ -154,9 +159,11 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
     	if(mCamera != null) {
     		Camera.Parameters parameters = mCamera.getParameters();
     		parameters.setPreviewSize(mPreviewSize.width, mPreviewSize.height);
+    		parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
     		requestLayout();
 
     		mCamera.setParameters(parameters);
+    		mCamera.setPreviewCallback(uploader);
     		mCamera.startPreview();
     	}
     }

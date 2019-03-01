@@ -105,8 +105,9 @@ public class CameraFragment extends Fragment implements ServerListener {
         ctx = this.getActivity();
         act = this.getActivity();
 
-        preview = new Preview(this.getActivity(), view.findViewById(R.id.textureView));
+        preview = new Preview(this.getActivity(), view.findViewById(R.id.surfaceView), uploader);
         preview.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        ((FrameLayout) view.findViewById(R.id.surfaceView).getParent()).addView(preview);
         preview.setKeepScreenOn(true);
 
         studentNameTextView = view.findViewById(R.id.textview_student_name_camera_result);
@@ -161,7 +162,7 @@ public class CameraFragment extends Fragment implements ServerListener {
         if(numCams > 0){
             try{
                 camera = Camera.open(0);
-                camera.setPreviewCallback(uploader);
+                //camera.setPreviewCallbackWithBuffer(uploader);
                 camera.startPreview();
                 preview.setCamera(camera);
             } catch (RuntimeException ex){

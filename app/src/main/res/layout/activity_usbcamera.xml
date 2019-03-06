@@ -9,6 +9,7 @@
     android:keepScreenOn="true">
 
     <FrameLayout
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar">
@@ -19,6 +20,79 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
     </FrameLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/usb_camera_result_header"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/usb_camera_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Camera initializing" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_menu_camera" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="#94af76"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:padding="10dp">
+
+            <TextView
+                android:text="Checked In"
+                android:textStyle="italic"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/usb_textview_plate_number_camera_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Plate #: "
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/usb_textview_student_name_camera_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Student:"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/usb_pass_failed_result_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/camera_student_failed_result" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:visibility="invisible"

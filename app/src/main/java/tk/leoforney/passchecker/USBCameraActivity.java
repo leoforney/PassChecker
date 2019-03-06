@@ -1,7 +1,10 @@
 package tk.leoforney.passchecker;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.hardware.usb.UsbDevice;
+import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
@@ -9,11 +12,13 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Surface;
+import android.view.TextureView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jiangdg.usbcamera.UVCCameraHelper;
@@ -26,8 +31,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.UiThread;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -48,11 +56,28 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
     private boolean isRequest;
     private boolean isPreview;
 
+    /* Imported from CameraFragment, adapted for USBCameraActivity */
+    private TextureView textureView;
+    TextView plateNumberTextView, studentNameTextView, cameraStatusTextView;
+    RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private PlateFailedAdapter adapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usbcamera);
         ButterKnife.bind(this);
+
+        studentNameTextView = findViewById(R.id.usb_textview_student_name_camera_result);
+        plateNumberTextView = findViewById(R.id.usb_textview_plate_number_camera_result);
+        cameraStatusTextView = findViewById(R.id.usb_camera_status);
+
+        recyclerView = findViewById(R.id.usb_pass_failed_result_recyclerview);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new PlateFailedAdapter(this);
+        recyclerView.setAdapter(adapter);
         initView();
 
         uploader = new ImageChecker(this);
@@ -274,7 +299,10 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
     }
 
     private void showShortMsg(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        runOnUiThread(() -> {
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+            cameraStatusTextView.setText(msg);
+        });
     }
 
     @Override
@@ -301,9 +329,10 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
         }
     }
 
+    boolean cameraGood = false;
+
     @Override
     public void onSurfaceChanged(CameraViewInterface view, Surface surface, int width, int height) {
-
     }
 
     @Override
@@ -314,8 +343,40 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
         }
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
+    @UiThread
     public void response(DatabaseResponse response) {
-        Log.d(TAG, "Response type: " + response.getType().toString().toUpperCase());
+        Log.d(TAG, "Response type: " + response.getType());
+        if (!cameraGood) {
+            runOnUiThread(() -> {
+                cameraStatusTextView.setText("Camera & Server OK  ✔");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    cameraStatusTextView.setTextColor(getResources().getColor(R.color.cameraOkay, getTheme()));
+                } else {
+                    cameraStatusTextView.setTextColor(getResources().getColor(R.color.cameraOkay));
+                }
+            });
+            cameraGood = true;
+        }
+        switch (response.getType()) {
+            case OK:
+                if (!plateNumberTextView.getText().toString().equals("Plate #: " + response.getPlateNumber().toUpperCase())) {
+                    runOnUiThread(() -> {
+                        plateNumberTextView.setText("Plate #: " + response.getPlateNumber().toUpperCase());
+                        studentNameTextView.setText("Student: " + response.getStudent().name);
+                    });
+                    MediaPlayer mPlayerChecked = MediaPlayer.create(this, R.raw.checked);
+                    // TODO Auto-generated method stub
+                    mPlayerChecked.setOnCompletionListener(MediaPlayer::release);
+                    mPlayerChecked.start();
+                }
+                break;
+            case PLATEONLY:
+                adapter.addResponse(response);
+                runOnUiThread(adapter::notifyDataSetChanged);
+                break;
+        }
     }
+
 }

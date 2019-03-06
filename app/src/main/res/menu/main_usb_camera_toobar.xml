@@ -9,4 +9,8 @@
         android:id="@+id/menu_resolution"
         android:title="Camera Resolution"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_return"
+        android:title="Return back"
+        app:showAsAction="never" />
 </menu>

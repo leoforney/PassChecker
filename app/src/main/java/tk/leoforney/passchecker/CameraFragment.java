@@ -1,28 +1,21 @@
 package tk.leoforney.passchecker;
 
 import android.Manifest;
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.hardware.Camera;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraMetadata;
 import android.hardware.camera2.CaptureRequest;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.SurfaceView;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
@@ -30,10 +23,6 @@ import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.List;
 
 import androidx.annotation.UiThread;
@@ -43,20 +32,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import me.aflak.ezcam.EZCam;
 import me.aflak.ezcam.EZCamCallback;
 
-public class CameraFragment extends Fragment implements ServerListener {
+public class CameraFragment extends Fragment implements EZCamCallback, ServerListener {
 
     private static final String TAG = "CameraFragment";
+    private EZCam cam;
+    private TextureView textureView;
     TextView plateNumberTextView;
     TextView studentNameTextView;
     RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private PlateFailedAdapter adapter;
     ImageChecker uploader;
-
-    Preview preview;
-    Camera camera;
-    Activity act;
-    Context ctx;
 
     public CameraFragment() {
 
@@ -75,6 +61,18 @@ public class CameraFragment extends Fragment implements ServerListener {
         uploader = new ImageChecker(getActivity());
         uploader.setServerListener(this);
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG, "Started");
+    }
+
+    @Override
+    public void onPause() {
+        Log.d(TAG, "Paused");
+        super.onPause();
     }
 
     @Override
@@ -102,13 +100,8 @@ public class CameraFragment extends Fragment implements ServerListener {
             }
         }).check();
 
-        ctx = this.getActivity();
-        act = this.getActivity();
-
-        preview = new Preview(this.getActivity(), view.findViewById(R.id.surfaceView), uploader);
-        preview.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        ((FrameLayout) view.findViewById(R.id.surfaceView).getParent()).addView(preview);
-        preview.setKeepScreenOn(true);
+        cam = new EZCam(getContext());
+        textureView = view.findViewById(R.id.textureView);
 
         studentNameTextView = view.findViewById(R.id.textview_student_name_camera_result);
         plateNumberTextView = view.findViewById(R.id.textview_plate_number_camera_result);
@@ -118,6 +111,11 @@ public class CameraFragment extends Fragment implements ServerListener {
         recyclerView.setLayoutManager(layoutManager);
         adapter = new PlateFailedAdapter(getActivity());
         recyclerView.setAdapter(adapter);
+
+        String id = cam.getCamerasList().get(CameraCharacteristics.LENS_FACING_BACK);
+        cam.selectCamera(id);
+        cam.setCameraCallback(this);
+        cam.open(CameraDevice.TEMPLATE_PREVIEW, textureView);
     }
 
     @Override
@@ -132,21 +130,64 @@ public class CameraFragment extends Fragment implements ServerListener {
 
     @Override
     public void onDetach() {
-        // Cam stop from here
+        cam.stopPreview();
+        cam.close();
         super.onDetach();
     }
 
+    @Override
+    public void onCameraReady() {
+        // triggered after cam.open(...)
+        // you can set capture settings for example:
+        cam.setCaptureSetting(CaptureRequest.COLOR_CORRECTION_ABERRATION_MODE, CameraMetadata.COLOR_CORRECTION_ABERRATION_MODE_HIGH_QUALITY);
+        cam.setCaptureSetting(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_OFF);
 
+        // then start the preview
+        cam.startPreview();
+    }
+
+    int imagesReceived = 0;
+
+    @Override
+    public void onPicture(Image image) {
+        Log.d(TAG, "Image receieved");
+        imagesReceived++;
+        if (imagesReceived > 5) {
+            Log.d(TAG, "Count 15");
+            uploader.onPicture(image);
+            imagesReceived = 0;
+        }
+        if (image != null) {
+            image.close();
+        }
+    }
+
+    @Override
+    public void onError(String message) {
+
+    }
+
+    @Override
+    public void onCameraDisconnected() {
+    }
+
+    @SuppressLint("SetTextI18n")
     @Override
     @UiThread
     public void response(DatabaseResponse response) {
         Log.d(TAG, "Response type: " + response.getType());
         switch (response.getType()) {
             case OK:
-                getActivity().runOnUiThread(() -> {
-                    plateNumberTextView.setText("Plate #: " + response.getPlateNumber().toUpperCase());
-                    studentNameTextView.setText("Student: " + response.getStudent().name);
-                });
+                if (!plateNumberTextView.getText().toString().equals("Plate #: " + response.getPlateNumber().toUpperCase())) {
+                    getActivity().runOnUiThread(() -> {
+                        plateNumberTextView.setText("Plate #: " + response.getPlateNumber().toUpperCase());
+                        studentNameTextView.setText("Student: " + response.getStudent().name);
+                    });
+                    MediaPlayer mPlayerChecked = MediaPlayer.create(getActivity(), R.raw.checked);
+                    // TODO Auto-generated method stub
+                    mPlayerChecked.setOnCompletionListener(MediaPlayer::release);
+                    mPlayerChecked.start();
+                }
                 break;
             case PLATEONLY:
                 adapter.addResponse(response);
@@ -154,37 +195,4 @@ public class CameraFragment extends Fragment implements ServerListener {
                 break;
         }
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        int numCams = Camera.getNumberOfCameras();
-        if(numCams > 0){
-            try{
-                camera = Camera.open(0);
-                //camera.setPreviewCallbackWithBuffer(uploader);
-                camera.startPreview();
-                preview.setCamera(camera);
-            } catch (RuntimeException ex){
-                Toast.makeText(ctx, "Camera not found", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    @Override
-    public void onPause() {
-        if(camera != null) {
-            camera.stopPreview();
-            preview.setCamera(null);
-            camera.release();
-            camera = null;
-        }
-        super.onPause();
-    }
-
-    private void resetCam() {
-        camera.startPreview();
-        preview.setCamera(camera);
-    }
-
 }

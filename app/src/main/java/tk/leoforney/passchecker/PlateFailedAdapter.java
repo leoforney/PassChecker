@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -74,7 +75,12 @@ public class PlateFailedAdapter extends RecyclerView.Adapter<PlateFailedAdapter.
                 }
             }
         }
-        if (add) responseList.add(0, response);
+        if (add) {
+            responseList.add(0, response);
+            MediaPlayer mPlayerFailed = MediaPlayer.create(parent, R.raw.failed);
+            mPlayerFailed.setOnCompletionListener(MediaPlayer::release);
+            mPlayerFailed.start();
+        }
     }
 
     // Create new views (invoked by the layout manager)
@@ -130,7 +136,7 @@ public class PlateFailedAdapter extends RecyclerView.Adapter<PlateFailedAdapter.
             }
         });
 
-        holder.plateNumber.setText(response.getPlateNumber());
+        holder.plateNumber.setText(response.getPlateNumber().toUpperCase());
         Log.d("PlateFailedHolder", "Plate binded: " + response.getPlateNumber());
 
     }

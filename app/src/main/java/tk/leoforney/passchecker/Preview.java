@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.ImageFormat;
 import android.hardware.Camera;
 import android.hardware.Camera.Size;
 import android.util.Log;
@@ -163,8 +164,11 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
     		requestLayout();
 
     		mCamera.setParameters(parameters);
-    		mCamera.setPreviewCallback(uploader);
+    		mCamera.setPreviewCallbackWithBuffer(uploader);
     		mCamera.startPreview();
+    		mCamera.setOneShotPreviewCallback(uploader);
+            //int bufferSize = (int) Math.round(ImageFormat.getBitsPerPixel(mCamera.getParameters().getPreviewFormat())/8.0);
+            //mCamera.addCallbackBuffer(new byte[bufferSize]);
     	}
     }
 

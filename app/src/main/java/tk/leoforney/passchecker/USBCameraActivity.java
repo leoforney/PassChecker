@@ -39,8 +39,6 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
     public SeekBar mSeekBrightness;
     @BindView(R.id.seekbar_contrast)
     public SeekBar mSeekContrast;
-    @BindView(R.id.return_to_main)
-    public Button mReturnButton;
 
     private UVCCameraHelper mCameraHelper;
     private CameraViewInterface mUVCCameraView;
@@ -59,11 +57,6 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
 
         uploader = new ImageChecker(this);
         uploader.setServerListener(this);
-
-        mReturnButton.setOnClickListener(v -> {
-            startActivity(new Intent(USBCameraActivity.this, MainActivity.class));
-            finish();
-        });
 
         // step.1 initialize UVCCameraHelper
         mUVCCameraView = (CameraViewInterface) mTextureView;
@@ -220,6 +213,10 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
                 }
                 mCameraHelper.startCameraFoucs();
                 break;
+            case R.id.menu_return:
+                startActivity(new Intent(USBCameraActivity.this, MainActivity.class));
+                finish();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -319,6 +316,6 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
 
     @Override
     public void response(DatabaseResponse response) {
-
+        Log.d(TAG, "Response type: " + response.getType().toString().toUpperCase());
     }
 }

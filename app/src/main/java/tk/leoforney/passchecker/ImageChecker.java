@@ -75,6 +75,10 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
     }
 
     public void upload(byte[] data) {
+        upload(data, true);
+    }
+
+    public void upload(byte[] data, boolean rotate) {
         if (data != null) {
             Log.d(TAG, "Data received: " + data.length);
 
@@ -89,7 +93,7 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
             Request request = new Request.Builder()
                     .url("http://" + CredentialsManager.getInstance(activity).getIP() + "/checkInDatabase")
                     .addHeader("Token", CredentialsManager.getInstance(activity).getToken())
-                    .addHeader("Sender", "Mobile")
+                    .addHeader("Sender", rotate ? "Mobile(Rotate)" : "Mobile(NoRotate)")
                     .post(requestBody)
                     .build();
 
@@ -116,11 +120,16 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
     public int width, height;
 
     // Keep in mind, we're using nv21Yuv as it's most efficient in the sample
+    int usbFrameCount = 0;
     @Override
     public void onPreviewResult(byte[] nv21Yuv) {
-        Log.d(TAG, "Byte data received from USB Camera");
-        byte[] jpegData = NV21toJPEG(nv21Yuv, width, height);
-        //upload(jpegData);
+        usbFrameCount++;
+        if (usbFrameCount > 3) {
+            Log.d(TAG, "Byte data received from USB Camera");
+            byte[] jpegData = NV21toJPEG(nv21Yuv, width, height);
+            upload(jpegData, false);
+            usbFrameCount = 0;
+        }
     }
 
     private static byte[] NV21toJPEG(byte[] nv21, int width, int height) {
@@ -221,21 +230,29 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
         return chars;
     }
 
+    int frameCount = 0;
+
     @Override
     public void onPreviewFrame(byte[] bytes, Camera camera) {
-        Camera.Parameters parameters = camera.getParameters();
-        int format = parameters.getPreviewFormat();
-        //YUV formats require more conversion
-        if (format == ImageFormat.NV21 || format == ImageFormat.YUY2 || format == ImageFormat.NV16) {
-            int w = parameters.getPreviewSize().width;
-            int h = parameters.getPreviewSize().height;
-            byte[] dataJpg = NV21toJPEG(bytes, w, h);
-            Log.d(TAG, "Byte data received from Camera");
-            if (dataJpg != null) {
-                upload(dataJpg);
+        frameCount++;
+        if (frameCount > 15) {
+            Camera.Parameters parameters = camera.getParameters();
+            int format = parameters.getPreviewFormat();
+            //YUV formats require more conversion
+            if (format == ImageFormat.NV21 || format == ImageFormat.YUY2 || format == ImageFormat.NV16) {
+                int w = parameters.getPreviewSize().width;
+                int h = parameters.getPreviewSize().height;
+                byte[] dataJpg = NV21toJPEG(bytes, w, h);
+                Log.d(TAG, "Byte data received from Camera");
+                if (dataJpg != null) {
+                    upload(dataJpg);
+                }
+                dataJpg = null;
+                System.gc();
+                camera.addCallbackBuffer(bytes);
+                camera.setPreviewCallbackWithBuffer(this);
+                //camera.addCallbackBuffer(null);
             }
-            System.gc();
-            camera.addCallbackBuffer(null);
         }
 
     }

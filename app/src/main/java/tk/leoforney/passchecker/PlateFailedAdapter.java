@@ -69,10 +69,8 @@ public class PlateFailedAdapter extends RecyclerView.Adapter<PlateFailedAdapter.
                     .equals(response
                             .getPlateNumber()
                             .toLowerCase()
-                            .replace(" ", ""))) {
-                if (similar) {
-                    add = false;
-                }
+                            .replace(" ", "")) || similar) {
+                add = false;
             }
         }
         if (add) {

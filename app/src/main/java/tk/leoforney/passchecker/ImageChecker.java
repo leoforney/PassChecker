@@ -196,23 +196,29 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
         return data;
     }
 
-    private static double threshold = 45; // Similarity threshold in percentage out of 100
+    private static double threshold = 66; // Similarity threshold in percentage out of 100
 
     public static boolean similarityOfStrings(String s1, String s2, double threshold) {
         double similarityCount = 0;
-        double totalCount = (s1.length() + s2.length()) / 2;
-        List<Character> s1chars = charList(s1.toLowerCase().replace(" ", "").toCharArray());
-        List<Character> s2chars = charList(s2.toLowerCase().replace(" ", "").toCharArray());
-        for (char iterateChar: s1chars) {
-            for (int i = 0; i < s2chars.size(); i++) {
-                char iteratedChar2 = s2chars.get(i);
-                if (iterateChar == iteratedChar2) {
-                    similarityCount++;
-                    s2chars.remove(i);
+        double totalCount = s1.length();
+        List<Character> origin = charList(s1.toLowerCase().replace(" ", "").toCharArray());
+        List<Character> comparison = charList(s2.toLowerCase().replace(" ", "").toCharArray());
+        for (Character iteratedOrigin: origin) {
+            for (Character comparisonChar: comparison) {
+                if (comparisonChar != null) {
+                    if (comparisonChar.equals(iteratedOrigin)) {
+                        similarityCount++;
+
+                        comparison.remove(comparisonChar);
+                        break;
+                    }
                 }
             }
         }
         double percentage = ((similarityCount/totalCount) * 100);
+        if (percentage > 100) {
+            percentage = 100;
+        }
         Log.d(TAG, "S: " + similarityCount + " T: " + totalCount + " " + percentage + "%");
         if (percentage > threshold) return true;
         return false;

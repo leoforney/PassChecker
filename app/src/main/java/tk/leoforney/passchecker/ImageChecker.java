@@ -124,7 +124,7 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
     @Override
     public void onPreviewResult(byte[] nv21Yuv) {
         usbFrameCount++;
-        if (usbFrameCount > 3) {
+        if (usbFrameCount > 5) {
             Log.d(TAG, "Byte data received from USB Camera");
             byte[] jpegData = NV21toJPEG(nv21Yuv, width, height);
             upload(jpegData, false);

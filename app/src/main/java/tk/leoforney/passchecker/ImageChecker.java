@@ -40,9 +40,39 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
         this.activity = activity;
         client = new OkHttpClient.Builder()
                 .writeTimeout(3L, TimeUnit.SECONDS)
+                .readTimeout(3L, TimeUnit.SECONDS)
                 .cache(null)
                 .build();
+        Request sendingThresholdRequest = new Request.Builder()
+                .url("http://" + CredentialsManager.getInstance(activity).getIP() + "/getProperty/frameCount")
+                .get()
+                .build();
+        client.newCall(sendingThresholdRequest).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String responseBody = response.body().string();
+                if (isInteger(responseBody)) {
+                    sendingThreshold = Integer.parseInt(responseBody);
+                }
+            }
+        });
         gson = new Gson();
+    }
+
+    public static boolean isInteger(String s) {
+        try {
+            Integer.parseInt(s);
+        } catch(NumberFormatException e) {
+            return false;
+        } catch(NullPointerException e) {
+            return false;
+        }
+        return true;
     }
 
     public void setServerListener(ServerListener listener) {
@@ -121,10 +151,11 @@ public class ImageChecker implements EZCamCallback, AbstractUVCCameraHandler.OnP
 
     // Keep in mind, we're using nv21Yuv as it's most efficient in the sample
     int usbFrameCount = 0;
+    int sendingThreshold = 5;
     @Override
     public void onPreviewResult(byte[] nv21Yuv) {
         usbFrameCount++;
-        if (usbFrameCount > 5) {
+        if (usbFrameCount > sendingThreshold) {
             Log.d(TAG, "Byte data received from USB Camera");
             byte[] jpegData = NV21toJPEG(nv21Yuv, width, height);
             upload(jpegData, false);

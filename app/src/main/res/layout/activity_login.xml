@@ -95,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ip_prompt"
-                android:maxLength="20"
+                android:maxLength="65"
                 android:maxLines="1"
                 android:singleLine="true" />
 

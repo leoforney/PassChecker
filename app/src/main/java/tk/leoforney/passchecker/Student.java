@@ -1,11 +1,9 @@
 package tk.leoforney.passchecker;
 
-import android.os.Parcel;
 import android.util.Base64;
 
 import com.bignerdranch.expandablerecyclerview.model.Parent;
 import com.google.gson.Gson;
-import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.ArrayList;
 import java.util.List;

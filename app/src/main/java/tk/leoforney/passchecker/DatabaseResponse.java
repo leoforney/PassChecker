@@ -68,6 +68,7 @@ public class DatabaseResponse {
         NOPLATES,
         PLATEONLY,
         STUDENTONLY,
-        ERROR
+        ERROR,
+        PASSINVALID
     }
 }

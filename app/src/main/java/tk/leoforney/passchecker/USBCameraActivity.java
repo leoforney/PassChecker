@@ -15,8 +15,8 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -62,6 +62,7 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
     RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private PlateFailedAdapter adapter;
+    private ServerProperties serverProperties;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -102,8 +103,8 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
         mSeekBrightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if(mCameraHelper != null && mCameraHelper.isCameraOpened()) {
-                    mCameraHelper.setModelValue(UVCCameraHelper.MODE_BRIGHTNESS,progress);
+                if (mCameraHelper != null && mCameraHelper.isCameraOpened()) {
+                    mCameraHelper.setModelValue(UVCCameraHelper.MODE_BRIGHTNESS, progress);
                 }
             }
 
@@ -121,8 +122,8 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
         mSeekContrast.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if(mCameraHelper != null && mCameraHelper.isCameraOpened()) {
-                    mCameraHelper.setModelValue(UVCCameraHelper.MODE_CONTRAST,progress);
+                if (mCameraHelper != null && mCameraHelper.isCameraOpened()) {
+                    mCameraHelper.setModelValue(UVCCameraHelper.MODE_CONTRAST, progress);
                 }
             }
 
@@ -182,7 +183,7 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
                         e.printStackTrace();
                     }
                     Looper.prepare();
-                    if(mCameraHelper != null && mCameraHelper.isCameraOpened()) {
+                    if (mCameraHelper != null && mCameraHelper.isCameraOpened()) {
                         mSeekBrightness.setProgress(mCameraHelper.getModelValue(UVCCameraHelper.MODE_BRIGHTNESS));
                         mSeekContrast.setProgress(mCameraHelper.getModelValue(UVCCameraHelper.MODE_CONTRAST));
                     }
@@ -363,18 +364,37 @@ public class USBCameraActivity extends AppCompatActivity implements ServerListen
             case OK:
                 if (!plateNumberTextView.getText().toString().equals("Plate #: " + response.getPlateNumber().toUpperCase())) {
                     runOnUiThread(() -> {
+                        RelativeLayout parent = (RelativeLayout) plateNumberTextView.getParent();
+                        parent.setBackgroundColor(getResources().getColor(R.color.panelGreen));
                         plateNumberTextView.setText("Plate #: " + response.getPlateNumber().toUpperCase());
                         studentNameTextView.setText("Student: " + response.getStudent().name);
                     });
                     MediaPlayer mPlayerChecked = MediaPlayer.create(this, R.raw.checked);
-                    // TODO Auto-generated method stub
+                    mPlayerChecked.setOnCompletionListener(MediaPlayer::release);
+                    mPlayerChecked.start();
+                }
+                break;
+            case PASSINVALID:
+                if (!plateNumberTextView.getText().toString().equals("Plate #: " + response.getPlateNumber().toUpperCase())) {
+                    runOnUiThread(() -> {
+                        RelativeLayout parent = (RelativeLayout) plateNumberTextView.getParent();
+                        parent.setBackgroundColor(getResources().getColor(R.color.cameraError));
+                        plateNumberTextView.setText("Plate #: " + response.getPlateNumber().toUpperCase());
+                        studentNameTextView.setText("Student: " + response.getStudent().name + "[INVALID]");
+                    });
+                    MediaPlayer mPlayerChecked = MediaPlayer.create(this, R.raw.invalid);
                     mPlayerChecked.setOnCompletionListener(MediaPlayer::release);
                     mPlayerChecked.start();
                 }
                 break;
             case PLATEONLY:
-                adapter.addResponse(response);
-                runOnUiThread(adapter::notifyDataSetChanged);
+                boolean demo = ServerProperties.getInstance(this).getPropertyBool("demoMode", true);
+                if (!demo) {
+                    if (response.getPlateNumber().equals("")) {
+                        adapter.addResponse(response);
+                        runOnUiThread(adapter::notifyDataSetChanged);
+                    }
+                }
                 break;
         }
     }
